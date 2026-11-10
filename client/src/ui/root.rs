@@ -26,7 +26,7 @@ pub fn Root() -> impl IntoView {
         ) {
             MsTokens(variant = variant, scheme = scheme)
             TooltipProvider(delay = Duration::from_millis(400), close_delay = Duration::ZERO) {
-                Toaster(corner = ToastCorner::BottomRight, limit = 4, class = "ms-notice") {
+                Toaster(corner = ToastCorner::BottomRight, limit = 4, class = "zs-notice") {
                     Notices()
                     Frame()
                 }

@@ -30,9 +30,9 @@ pub fn ConnectBody() -> impl IntoView {
     view! {
         DialogHeader {
             DialogTitle {"Connect"}
-            DialogDescription {"The address is the host and the server name, such as moq.newspicel.dev/public."}
+            DialogDescription {"The address is the host and the server name, such as zspeak.newspicel.dev/public."}
         }
-        column(class = "ms-form") {
+        column(class = "zs-form") {
             FormRow(label = "Server") {
                 Input(value = address, label = "Server address", on:key_down = on_enter)
             }

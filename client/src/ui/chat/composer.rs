@@ -43,13 +43,13 @@ pub fn Composer() -> impl IntoView {
 
     // The placeholder names the conversation, so the field is built again when it changes.
     view! {
-        row(class = "ms-composer") {
+        row(class = "zs-composer") {
             {move || view! { Input(
                 value = draft,
                 placeholder = placeholder.get(),
                 disabled = offline,
                 label = "Message",
-                class = "ms-composer__input",
+                class = "zs-composer__input",
                 on:key_down = move |ev| {
                     if matches!(&ev.key, Key::Named(NamedKey::Enter)) {
                         send();
@@ -62,7 +62,7 @@ pub fn Composer() -> impl IntoView {
                 on = ready,
                 disabled = Signal::derive_local(move || !ready.get()),
                 placement = Placement::TOP,
-                class = "ms-composer__send",
+                class = "zs-composer__send",
                 on_press = press
             )
         }

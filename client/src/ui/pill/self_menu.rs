@@ -36,11 +36,11 @@ pub fn SelfMenu() -> impl IntoView {
 
     view! {
         DropdownMenu {
-            DropdownMenuTrigger(variant = ButtonVariant::Ghost, size = ButtonSize::Sm, class = "ms-self", on:pointer_down = press::hold()) {
+            DropdownMenuTrigger(variant = ButtonVariant::Ghost, size = ButtonSize::Sm, class = "zs-self", on:pointer_down = press::hold()) {
                 StatusDot(tone = tone)
-                text(class = "ms-self__name") {{name}}
+                text(class = "zs-self__name") {{name}}
                 if move || state.voice_mode.get() == VoiceMode::PushToTalk {
-                    text(class = "ms-self__kbd") {"F1"}
+                    text(class = "zs-self__kbd") {"F1"}
                 }
             }
             DropdownMenuContent(placement = Signal::stored_local(zgui_ui_primitives::Placement::TOP)) {

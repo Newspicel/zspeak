@@ -7,8 +7,8 @@
 
 /* Compact and flat. */
 --zui-space-base: 3px;
---ms-radius: 8px;
---zui-radius-base: var(--ms-radius);
+--zs-radius: 8px;
+--zui-radius-base: var(--zs-radius);
 --zui-shadow-xs: none;
 --zui-shadow-sm: none;
 --zui-shadow-md: 0 4px 16px oklch(0 0 0 / 10%);
@@ -64,14 +64,14 @@
 --zui-color-sidebar-ring: oklch(0.534 0.120 76.5);
 
 /* What a status mark is painted with. */
---ms-tone-ok: var(--zui-color-success);
---ms-tone-warn: var(--zui-color-warning);
---ms-tone-err: var(--zui-color-destructive);
---ms-tone-info: var(--zui-color-info);
---ms-tone-idle: var(--zui-color-muted-foreground);
+--zs-tone-ok: var(--zui-color-success);
+--zs-tone-warn: var(--zui-color-warning);
+--zs-tone-err: var(--zui-color-destructive);
+--zs-tone-info: var(--zui-color-info);
+--zs-tone-idle: var(--zui-color-muted-foreground);
 
 /* What a voice that speaks is painted with. */
---ms-talk: var(--zui-color-success);
+--zs-talk: var(--zui-color-success);
 
 /* What a menu row under the pointer or the keys is painted with: one step off the popover. */
---ms-menu-hover: oklch(0.898 0.000 0.0);
+--zs-menu-hover: oklch(0.898 0.000 0.0);

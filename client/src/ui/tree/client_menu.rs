@@ -46,15 +46,15 @@ fn facts(state: AppState, id: ClientId) -> AnyView {
     let line = parts.join(" · ");
     if line.is_empty() {
         return view! {
-            column(class = "ms-menu-facts") {
-                text(class = "ms-menu-facts__name") {{client.name}}
+            column(class = "zs-menu-facts") {
+                text(class = "zs-menu-facts__name") {{client.name}}
             }
         }
         .any();
     }
     view! {
-        column(class = "ms-menu-facts") {
-            text(class = "ms-menu-facts__name") {{client.name}}
+        column(class = "zs-menu-facts") {
+            text(class = "zs-menu-facts__name") {{client.name}}
             text {{line}}
         }
     }
@@ -71,17 +71,17 @@ fn volume(state: AppState, id: ClientId) -> AnyView {
         ) * 100.0,
     );
     view! {
-        row(class = "ms-menu-volume") {
+        row(class = "zs-menu-volume") {
             Slider(
                 value = level,
                 min = 0.0,
                 max = 200.0,
                 step = 5.0,
                 label = "Volume",
-                class = "ms-menu-volume__slider",
+                class = "zs-menu-volume__slider",
                 on_change = UnsyncCallback::new(move |v: f64| state.set_volume(id, (v / 100.0) as f32))
             )
-            text(class = "ms-menu-volume__value") {{move || format!("{:.0}%", level.get())}}
+            text(class = "zs-menu-volume__value") {{move || format!("{:.0}%", level.get())}}
         }
     }
     .any()

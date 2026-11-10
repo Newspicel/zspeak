@@ -19,7 +19,7 @@ pub fn StatusDot(
 ) -> impl IntoView {
     view! {
         box(
-            class = "ms-dot",
+            class = "zs-dot",
             attr:data-tone = move || Some(tone.get().to_owned()),
             attr:data-busy = move || busy.get().then(|| "true".to_owned()),
             a11y:hidden = true

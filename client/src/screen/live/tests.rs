@@ -70,7 +70,7 @@ mod round_trip {
 }
 
 mod bench {
-    /// `cargo test --release -p moqspeak encode_speed -- --ignored --nocapture`
+    /// `cargo test --release -p zspeak encode_speed -- --ignored --nocapture`
     #[test]
     #[ignore]
     fn encode_speed() {

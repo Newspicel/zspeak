@@ -28,7 +28,7 @@ pub fn ModalHost(is: fn(&Modal) -> bool, children: ChildrenFn) -> impl IntoView 
     });
     view! {
         Dialog(open = open, on_open_change = on_open_change) {
-            DialogContent(class = "ms-dialog") {
+            DialogContent(class = "zs-dialog") {
                 {children.view()}
             }
         }
@@ -39,8 +39,8 @@ pub fn ModalHost(is: fn(&Modal) -> bool, children: ChildrenFn) -> impl IntoView 
 #[component]
 pub fn FormRow(#[prop(into)] label: String, children: Children) -> impl IntoView {
     view! {
-        column(class = "ms-form__row") {
-            text(class = "ms-form__label") {{label}}
+        column(class = "zs-form__row") {
+            text(class = "zs-form__label") {{label}}
             {children.into_view_once()}
         }
     }

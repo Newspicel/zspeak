@@ -67,7 +67,7 @@ pub fn DevicePicker(input: bool, info: RwSignal<DeviceInfo, LocalStorage>) -> im
 
     view! {
         Select(value = value, on_change = on_change) {
-            SelectTrigger(class = "ms-settings__control") { SelectValue(placeholder = "Choose a device", class = "ms-settings__value-text") }
+            SelectTrigger(class = "zs-settings__control") { SelectValue(placeholder = "Choose a device", class = "zs-settings__value-text") }
             SelectContent {
                 SelectItem(value = SYSTEM) {{system_label.get_value()}}
                 for name in move || names.get_value(), key = |n: &String| n.clone() {

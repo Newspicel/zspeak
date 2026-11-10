@@ -245,7 +245,7 @@ mod tests {
     #[test]
     fn reads_a_file_the_path_points_at() {
         let identity = ts3proto::generate_identity(0);
-        let path = std::env::temp_dir().join(format!("moqspeak-import-{}.ini", std::process::id()));
+        let path = std::env::temp_dir().join(format!("zspeak-import-{}.ini", std::process::id()));
         std::fs::write(&path, export(&identity, "Main", "Julian")).expect("write the export");
         let read =
             from_input(&format!(" {} ", path.display())).expect("the path leads to an export");

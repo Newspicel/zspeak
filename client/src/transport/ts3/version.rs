@@ -31,8 +31,8 @@ pub fn for_this_system() -> VersionSign {
 /// What TeamSpeak calls the system this client runs on.
 fn platform() -> &'static str {
     // A development aid for checking what a server makes of each one:
-    // MOQSPEAK_TS3_PLATFORM=Linux.
-    if let Ok(forced) = std::env::var("MOQSPEAK_TS3_PLATFORM")
+    // ZSPEAK_TS3_PLATFORM=Linux.
+    if let Ok(forced) = std::env::var("ZSPEAK_TS3_PLATFORM")
         && let Some(named) = named(&forced)
     {
         return named;

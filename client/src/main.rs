@@ -1,4 +1,4 @@
-//! moqspeak: a voice client on zgui and Media over QUIC.
+//! zspeak: a voice client on zgui and Media over QUIC.
 
 // A release build on Windows is a GUI program with no console window.
 #![cfg_attr(all(windows, not(debug_assertions)), windows_subsystem = "windows")]
@@ -21,7 +21,7 @@ use crate::ui::RootProps;
 
 /// The window icon, decoded from the PNG the build embeds.
 fn window_icon() -> WindowIcon {
-    let png = include_bytes!("../../packaging/icon/moqspeak-256.png");
+    let png = include_bytes!("../../packaging/icon/zspeak-256.png");
     let image = image::load_from_memory_with_format(png, image::ImageFormat::Png)
         .expect("embedded icon is a valid PNG")
         .into_rgba8();
@@ -33,7 +33,7 @@ fn main() -> Result<(), zgui::Error> {
     tracing_subscriber::fmt()
         .with_env_filter(
             tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| "warn,moqspeak=info,moq_tokio=info".into()),
+                .unwrap_or_else(|_| "warn,zspeak=info,moq_tokio=info".into()),
         )
         .init();
 
@@ -43,7 +43,7 @@ fn main() -> Result<(), zgui::Error> {
         return Ok(());
     }
 
-    // `moqspeak <address> [nickname]` connects at start-up.
+    // `zspeak <address> [nickname]` connects at start-up.
     let autoconnect = args.get(1).filter(|a| !a.starts_with('-')).cloned();
     let autonick = args.get(2).cloned();
     let saved = ui::state::Settings::load();
@@ -53,8 +53,8 @@ fn main() -> Result<(), zgui::Error> {
     ));
 
     app()
-        .with_application_id("dev.moqspeak.Client")
-        .with_title("moqspeak")
+        .with_application_id("dev.zspeak.Client")
+        .with_title("zspeak")
         .with_size(1100.0, 720.0)
         .with_min_size(640.0, 440.0)
         .with_decorations(Decorations::NoTitleBar)
@@ -76,11 +76,8 @@ fn main() -> Result<(), zgui::Error> {
             // and the OS closes the sockets; tearing the tree down piece by piece only gives
             // late reactive work a chance to touch values that are already gone.
             std::mem::forget(on_close_request(|| std::process::exit(0)));
-            // A development aid for screenshots: MOQSPEAK_OPEN=connect,settings,appearance,log,chat.
-            for open in std::env::var("MOQSPEAK_OPEN")
-                .unwrap_or_default()
-                .split(',')
-            {
+            // A development aid for screenshots: ZSPEAK_OPEN=connect,settings,appearance,log,chat.
+            for open in std::env::var("ZSPEAK_OPEN").unwrap_or_default().split(',') {
                 match open {
                     "connect" => state.modal.set(ui::state::Modal::Connect),
                     "settings" => state.settings_open.set(true),

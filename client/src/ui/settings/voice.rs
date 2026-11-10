@@ -65,14 +65,14 @@ pub fn VoicePane(info: RwSignal<DeviceInfo, LocalStorage>) -> impl IntoView {
             SettingsGroup {
                 SettingsGroupLabel {"Transmission"}
                 SettingsItem(label = "Mode") {
-                    ToggleGroup(value = mode, spacing = 2.0, label = "Transmission", class = "ms-switch") {
+                    ToggleGroup(value = mode, spacing = 2.0, label = "Transmission", class = "zs-switch") {
                         ToggleGroupItem(value = "activation") {"Voice"}
                         ToggleGroupItem(value = "ptt") {"Push-to-talk"}
                         ToggleGroupItem(value = "continuous") {"Continuous"}
                     }
                 }
                 if move || state.voice_mode.get() == VoiceMode::PushToTalk {
-                    text(class = "ms-settings__note") {"Hold F1 anywhere, ` outside text fields, or the talk key in the pill."}
+                    text(class = "zs-settings__note") {"Hold F1 anywhere, ` outside text fields, or the talk key in the pill."}
                 }
                 if move || state.voice_mode.get() == VoiceMode::Activation {
                     SettingsItem(label = "Threshold", description = "Speak normally. The bar lights above the mark.") {
@@ -112,7 +112,7 @@ pub fn VoicePane(info: RwSignal<DeviceInfo, LocalStorage>) -> impl IntoView {
                 }
             }
             if move || info.with(|i| i.error.is_some()) {
-                text(class = "ms-settings__note", attr:data-tone = "err") {{move || info.get().error.unwrap_or_default()}}
+                text(class = "zs-settings__note", attr:data-tone = "err") {{move || info.get().error.unwrap_or_default()}}
             }
         }
     }

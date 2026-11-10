@@ -18,14 +18,14 @@ pub fn Head() -> impl IntoView {
     let state = AppState::expect();
     let settings = Rc::new(move || state.settings_open.set(true));
     view! {
-        row(class = "ms-head", on:pointer_down = press::move_window()) {
+        row(class = "zs-head", on:pointer_down = press::move_window()) {
             if move || state.online() {
                 ServerMenu()
                 Where()
-                box(class = "ms-head__gap")
+                box(class = "zs-head__gap")
                 HeadKeys()
             } else {
-                box(class = "ms-head__gap")
+                box(class = "zs-head__gap")
                 Key(
                     svg = Signal::stored_local(icons::SETTINGS),
                     label = Signal::stored_local("Settings".to_owned()),

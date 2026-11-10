@@ -1,46 +1,46 @@
 /* The channel tree: one column of rows. A row box stands inside its slot, so a hover reads as a
    card. The slots touch. */
 
-.ms-tree {
+.zs-tree {
     flex: 1 1 0;
     min-height: 0;
 }
 
 /* The rows end above the pill, so the last row is never under it. */
-.ms-tree__rows {
-    padding: var(--zui-space-xs) 0 calc(var(--ms-pill) + 32px);
+.zs-tree__rows {
+    padding: var(--zui-space-xs) 0 calc(var(--zs-pill) + 32px);
 }
 
 /* The rows stand on this field, each at its place. The field grows and shrinks with them. */
-.ms-tree__field {
+.zs-tree__field {
     position: relative;
     flex: 0 0 auto;
-    transition: height var(--ms-glide) var(--ms-ease);
+    transition: height var(--zs-glide) var(--zs-ease);
 }
 
 /* One row's place. It glides to a new place, and fades in where a row appears. */
 /* A row stands at its place with `top`, not a transform: a transform would give the row a
    coordinate space of its own, and a scrolled space of its own is one the pointer misses. */
-.ms-slot {
+.zs-slot {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: var(--ms-row);
-    transition: top var(--ms-glide) var(--ms-ease);
-    animation: ms-slot-in var(--ms-glide) var(--ms-ease);
+    height: var(--zs-row);
+    transition: top var(--zs-glide) var(--zs-ease);
+    animation: zs-slot-in var(--zs-glide) var(--zs-ease);
 }
 
-@keyframes ms-slot-in {
+@keyframes zs-slot-in {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-.ms-row {
+.zs-row {
     display: flex;
     align-items: center;
     gap: var(--zui-space-sm);
-    height: var(--ms-row);
+    height: var(--zs-row);
     margin: 0 var(--zui-space-sm);
     padding-right: var(--zui-space-md);
     border-radius: var(--zui-radius-md);
@@ -48,31 +48,31 @@
     cursor: pointer;
 }
 
-.ms-row:hover,
-.ms-row[data-menu="open"] {
+.zs-row:hover,
+.zs-row[data-menu="open"] {
     background-color: var(--zui-color-secondary);
 }
 
-.ms-row[data-selected="true"] {
+.zs-row[data-selected="true"] {
     background-color: color-mix(in oklab, var(--zui-color-primary) 10%, transparent);
 }
 
-.ms-row[data-selected="true"]:hover {
+.zs-row[data-selected="true"]:hover {
     background-color: color-mix(in oklab, var(--zui-color-primary) 15%, transparent);
 }
 
-.ms-row:focus-visible {
+.zs-row:focus-visible {
     outline: none;
     box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--zui-color-primary) 40%, transparent);
 }
 
 /* The channel a dragged client would land in. */
-.ms-row[data-drop="true"] {
+.zs-row[data-drop="true"] {
     background-color: color-mix(in oklab, var(--zui-color-primary) 18%, transparent);
     box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--zui-color-primary) 50%, transparent);
 }
 
-.ms-row__name {
+.zs-row__name {
     flex: 0 1 auto;
     min-width: 0;
     white-space: nowrap;
@@ -80,12 +80,12 @@
     text-overflow: ellipsis;
 }
 
-.ms-row__gap {
+.zs-row__gap {
     flex: 1 1 auto;
 }
 
 /* The chevron that folds a channel. It turns a quarter while the channel stands open. */
-.ms-twisty {
+.zs-twisty {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
@@ -97,33 +97,33 @@
     transform: rotate(0deg);
 }
 
-.ms-twisty[data-open="true"] {
+.zs-twisty[data-open="true"] {
     transform: rotate(90deg);
 }
 
-.ms-twisty:hover {
+.zs-twisty:hover {
     color: var(--zui-color-foreground);
 }
 
-.ms-twisty[data-empty="true"] {
+.zs-twisty[data-empty="true"] {
     visibility: hidden;
 }
 
-.ms-row__mark {
+.zs-row__mark {
     color: var(--zui-color-muted-foreground);
 }
 
 /* The channel you are in. */
-.ms-row--channel[data-mine="true"] .ms-row__name {
+.zs-row--channel[data-mine="true"] .zs-row__name {
     font-weight: var(--zui-type-weight-medium);
 }
 
-.ms-row--channel[data-mine="true"] .ms-row__mark {
+.zs-row--channel[data-mine="true"] .zs-row__mark {
     color: var(--zui-color-primary);
 }
 
 /* The count holds the trailing edge. */
-.ms-row__count {
+.zs-row__count {
     flex: 0 0 auto;
     min-width: 16px;
     text-align: right;
@@ -132,36 +132,36 @@
     font-variant-numeric: tabular-nums;
 }
 
-.ms-row__count[data-full="true"] {
-    color: var(--ms-tone-warn);
+.zs-row__count[data-full="true"] {
+    color: var(--zs-tone-warn);
 }
 
 /* A client: the dot stands where the channel mark stands one level up. */
-.ms-row--client {
+.zs-row--client {
     color: var(--zui-color-foreground);
 }
 
-.ms-row--client[data-away="true"] .ms-row__name {
+.zs-row--client[data-away="true"] .zs-row__name {
     color: var(--zui-color-muted-foreground);
 }
 
-.ms-row--client .ms-dot {
+.zs-row--client .zs-dot {
     margin: 0 3px;
 }
 
-.ms-row__flags {
+.zs-row__flags {
     flex: 0 0 auto;
     align-items: center;
     gap: 6px;
     color: var(--zui-color-muted-foreground);
 }
 
-.ms-row__flag[data-tone="err"] {
-    color: var(--ms-tone-err);
+.zs-row__flag[data-tone="err"] {
+    color: var(--zs-tone-err);
 }
 
 /* Why the tree is empty. */
-.ms-tree__notice {
+.zs-tree__notice {
     flex: 1 1 0;
     align-items: center;
     justify-content: center;
@@ -172,18 +172,18 @@
 }
 
 /* A slider inside a client's menu. */
-.ms-menu-volume {
+.zs-menu-volume {
     align-items: center;
     gap: 8px;
     padding: 2px 8px 6px;
 }
 
-.ms-menu-volume__slider {
+.zs-menu-volume__slider {
     flex: 1 1 auto;
     width: 140px;
 }
 
-.ms-menu-volume__value {
+.zs-menu-volume__value {
     flex: 0 0 auto;
     width: 36px;
     text-align: right;
@@ -193,57 +193,57 @@
 }
 
 /* The facts at the head of a client's menu. */
-.ms-menu-facts {
+.zs-menu-facts {
     gap: 1px;
     padding: 4px 8px 6px;
     color: var(--zui-color-muted-foreground);
     font-size: var(--zui-type-size-xs);
 }
 
-.ms-menu-facts__name {
+.zs-menu-facts__name {
     color: var(--zui-color-popover-foreground);
-    font-size: var(--ms-menu-text);
+    font-size: var(--zs-menu-text);
     font-weight: var(--zui-type-weight-medium);
 }
 
 /* TeamSpeak servers group their tree with spacers: a ruled line, or a heading across the width. */
-.ms-row[data-spacer] {
+.zs-row[data-spacer] {
     cursor: default;
 }
 
-.ms-row[data-spacer] .ms-row__gap {
+.zs-row[data-spacer] .zs-row__gap {
     display: none;
 }
 
-.ms-row[data-spacer] .ms-row__name {
+.zs-row[data-spacer] .zs-row__name {
     flex: 1 1 auto;
     color: var(--zui-color-muted-foreground);
 }
 
-.ms-row[data-spacer="center"] .ms-row__name {
+.zs-row[data-spacer="center"] .zs-row__name {
     text-align: center;
 }
 
-.ms-row[data-spacer="right"] .ms-row__name {
+.zs-row[data-spacer="right"] .zs-row__name {
     text-align: right;
 }
 
 /* A ruled line divides the tree and answers to nothing. */
-.ms-row[data-spacer="fill"] {
-    height: calc(var(--ms-row) * 0.7);
+.zs-row[data-spacer="fill"] {
+    height: calc(var(--zs-row) * 0.7);
     color: var(--zui-color-border);
 }
 
-.ms-row[data-spacer="fill"] .ms-twisty {
+.zs-row[data-spacer="fill"] .zs-twisty {
     display: none;
 }
 
-.ms-row[data-spacer="fill"] .ms-row__name {
+.zs-row[data-spacer="fill"] .zs-row__name {
     color: var(--zui-color-border);
     text-overflow: clip;
 }
 
-.ms-row[data-spacer="fill"]:hover,
-.ms-row[data-spacer="fill"][data-menu="open"] {
+.zs-row[data-spacer="fill"]:hover,
+.zs-row[data-spacer="fill"][data-menu="open"] {
     background-color: transparent;
 }

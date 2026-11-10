@@ -26,7 +26,7 @@ impl Capabilities {
         live_status: false,
     };
 
-    /// Everything, which is what the moqspeak Worker serves.
+    /// Everything, which is what the zspeak Worker serves.
     pub const MOQ: Self = Self {
         screen_share: true,
         channels: true,

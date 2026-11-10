@@ -32,7 +32,7 @@ pub fn toggle_share(state: AppState) {
     match monitors.len() {
         0 => state.fail(
             "No screen to share",
-            Some("On macOS, allow moqspeak under System Settings → Privacy & Security → Screen Recording.".into()),
+            Some("On macOS, allow zspeak under System Settings → Privacy & Security → Screen Recording.".into()),
         ),
         1 => state.send(Command::StartShare(Source::Monitor(monitors[0].id))),
         _ => state.modal.set(Modal::Share { monitors }),

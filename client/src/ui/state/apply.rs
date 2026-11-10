@@ -68,8 +68,8 @@ impl AppState {
                 if gone {
                     self.selected.set(Selection::None);
                 }
-                // A development aid for screenshots: MOQSPEAK_SELECT=<nickname>.
-                if let Ok(wanted) = std::env::var("MOQSPEAK_SELECT")
+                // A development aid for screenshots: ZSPEAK_SELECT=<nickname>.
+                if let Ok(wanted) = std::env::var("ZSPEAK_SELECT")
                     && self.selected.get_untracked() == Selection::None
                     && let Some(c) = clients.iter().find(|c| c.name == wanted)
                 {

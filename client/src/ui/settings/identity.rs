@@ -211,10 +211,10 @@ pub fn IdentityPane() -> impl IntoView {
                 SettingsGroupLabel {"TeamSpeak identity"}
                 SettingsGroupDescription {"A TeamSpeak server knows this client by its identity, and keeps the groups it granted it."}
                 SettingsItem(label = "Unique id", description = "What a server shows this client as.") {
-                    text(class = "ms-identity__uid") {{move || uid.get()}}
+                    text(class = "zs-identity__uid") {{move || uid.get()}}
                 }
                 SettingsItem(label = "Security level", description = "Proof of work over the identity. A server may ask for a minimum.") {
-                    text(class = "ms-identity__level") {{move || level.get()}}
+                    text(class = "zs-identity__level") {{move || level.get()}}
                 }
                 SettingsItem(label = "Export", description = "Write the identity to a file the TeamSpeak client imports under Identities.") {
                     Button(variant = ButtonVariant::Outline, disabled = empty, on:click = move |_| send_out()) {"Export"}
@@ -224,8 +224,8 @@ pub fn IdentityPane() -> impl IntoView {
                 SettingsGroupLabel {"Raise the security level"}
                 SettingsGroupDescription {"The search runs on every core. A level costs twice the one before it, and leaving this page keeps the best offset found."}
                 SettingsItem(label = "Target level") {
-                    row(class = "ms-identity__row") {
-                        Input(value = target, label = "Target security level", disabled = running, class = "ms-identity__target")
+                    row(class = "zs-identity__row") {
+                        Input(value = target, label = "Target security level", disabled = running, class = "zs-identity__target")
                         if move || running.get() {
                             Button(variant = ButtonVariant::Outline, on:click = move |_| halt()) {"Stop"}
                         }
@@ -235,7 +235,7 @@ pub fn IdentityPane() -> impl IntoView {
                     }
                 }
                 if move || running.get() {
-                    text(class = "ms-identity__progress") {
+                    text(class = "zs-identity__progress") {
                         {move || progress.with(|p| p.as_ref().map_or_else(String::new, |p| {
                             format!("{} offsets tried · best level {}", tally(p.tried), p.level)
                         }))}
@@ -245,28 +245,28 @@ pub fn IdentityPane() -> impl IntoView {
             SettingsGroup {
                 SettingsGroupLabel {"Import an identity"}
                 SettingsGroupDescription {"Paste what the TeamSpeak client exports: the file, a path to it, or the key and its counter."}
-                column(class = "ms-identity__import") {
+                column(class = "zs-identity__import") {
                     Textarea(
                         value = pasted,
                         label = "Identity to import",
                         placeholder = "The exported file, a path to it, or key:counter",
-                        class = "ms-identity__paste"
+                        class = "zs-identity__paste"
                     )
-                    row(class = "ms-identity__row") {
+                    row(class = "zs-identity__row") {
                         Button(variant = ButtonVariant::Outline, on:click = move |_| read()) {"Read"}
                     }
                     if move || pending.with(|p| p.is_some()) {
-                        column(class = "ms-identity__preview") {
+                        column(class = "zs-identity__preview") {
                             text {{move || pending.with(|p| p.as_ref().map_or_else(String::new, preview))}}
-                            text(class = "ms-identity__hint") {"The identity in use is kept beside the new one, as teamspeak.identity.bak."}
-                            row(class = "ms-identity__row") {
+                            text(class = "zs-identity__hint") {"The identity in use is kept beside the new one, as teamspeak.identity.bak."}
+                            row(class = "zs-identity__row") {
                                 Button(on:click = move |_| take()) {"Replace my identity"}
                                 Button(variant = ButtonVariant::Ghost, on:click = move |_| pending.set(None)) {"Cancel"}
                             }
                         }
                     }
                     if move || trouble.with(|t| t.is_some()) {
-                        text(class = "ms-identity__trouble") {{move || trouble.with(|t| t.clone().unwrap_or_default())}}
+                        text(class = "zs-identity__trouble") {{move || trouble.with(|t| t.clone().unwrap_or_default())}}
                     }
                 }
             }

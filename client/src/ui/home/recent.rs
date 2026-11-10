@@ -22,7 +22,7 @@ fn RecentEntry(entry: Bookmark) -> impl IntoView {
     let by_key = entry.clone();
     view! {
         row(
-            class = "ms-servers__row",
+            class = "zs-servers__row",
             tabindex = Focus::Sequential,
             a11y:role = Role::Button,
             a11y:label = format!("Connect to {label}"),
@@ -35,8 +35,8 @@ fn RecentEntry(entry: Bookmark) -> impl IntoView {
             }
         ) {
             StatusDot(tone = Signal::stored_local("idle"))
-            text(class = "ms-servers__label") {{label.clone()}}
-            text(class = "ms-servers__address") {{shown}}
+            text(class = "zs-servers__label") {{label.clone()}}
+            text(class = "zs-servers__address") {{shown}}
             Key(
                 svg = Signal::stored_local(icons::STAR),
                 label = Signal::stored_local("Save server".to_owned()),
@@ -58,8 +58,8 @@ pub fn RecentList() -> impl IntoView {
     let history = move || state.settings.with(|s| s.history.clone());
     view! {
         if move || !history().is_empty() {
-            column(class = "ms-servers") {
-                row(class = "ms-servers__title") {
+            column(class = "zs-servers") {
+                row(class = "zs-servers__title") {
                     text {"Recent"}
                     text {{move || history().len().to_string()}}
                 }

@@ -31,14 +31,14 @@ pub fn LevelMeter(threshold: RwSignal<f64, LocalStorage>) -> impl IntoView {
     on_cleanup_local(move || drop(sampling));
 
     view! {
-        column(class = "ms-vad") {
-            box(class = "ms-meter") {
+        column(class = "zs-vad") {
+            box(class = "zs-meter") {
                 box(
-                    class = "ms-meter__fill",
+                    class = "zs-meter__fill",
                     attr:data-hot = move || (level.get() >= threshold.get() as f32).then(|| "true".to_owned()),
                     style:width = move || Some(format!("{:.1}%", percent(level.get())))
                 )
-                box(class = "ms-meter__mark", style:left = move || Some(format!("{:.1}%", percent(threshold.get() as f32))))
+                box(class = "zs-meter__mark", style:left = move || Some(format!("{:.1}%", percent(threshold.get() as f32))))
             }
             ValueSlider(
                 value = threshold, min = -80.0, max = 0.0, step = 1.0, label = "Activation threshold", unit = " dB",
@@ -47,9 +47,9 @@ pub fn LevelMeter(threshold: RwSignal<f64, LocalStorage>) -> impl IntoView {
                     state.update_settings(|s| s.threshold_db = v as f32);
                 })
             )
-            row(class = "ms-vad__readout") {
+            row(class = "zs-vad__readout") {
                 text {{move || if speaking.get() { "Transmitting" } else { "Quiet" }}}
-                text(class = "ms-vad__speech", attr:data-on = move || (voice.get() >= 0.5).then(|| "true".to_owned())) {
+                text(class = "zs-vad__speech", attr:data-on = move || (voice.get() >= 0.5).then(|| "true".to_owned())) {
                     {move || format!("speech {:.0}%", voice.get() * 100.0)}
                 }
             }

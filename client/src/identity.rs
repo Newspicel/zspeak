@@ -11,7 +11,7 @@ pub struct Identity {
 
 impl Identity {
     fn path() -> Option<std::path::PathBuf> {
-        directories::ProjectDirs::from("dev", "moqspeak", "moqspeak")
+        directories::ProjectDirs::from("dev", "zspeak", "zspeak")
             .map(|d| d.config_dir().join("identity.key"))
     }
 
@@ -59,7 +59,7 @@ impl Identity {
 
     /// Answers a server's challenge.
     pub fn answer(&self, server: &str, nonce: &str) -> String {
-        let message = format!("moqspeak-auth:{server}:{nonce}");
+        let message = format!("zspeak-auth:{server}:{nonce}");
         URL_SAFE_NO_PAD.encode(self.key.sign(message.as_bytes()).to_bytes())
     }
 }
@@ -79,6 +79,6 @@ mod tests {
             VerifyingKey::from_bytes(&URL_SAFE_NO_PAD.decode(&uid).unwrap().try_into().unwrap())
                 .unwrap();
         let sig = Signature::from_slice(&URL_SAFE_NO_PAD.decode(sig).unwrap()).unwrap();
-        assert!(key.verify(b"moqspeak-auth:demo:abc", &sig).is_ok());
+        assert!(key.verify(b"zspeak-auth:demo:abc", &sig).is_ok());
     }
 }

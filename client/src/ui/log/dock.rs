@@ -29,11 +29,11 @@ pub fn LogDock() -> impl IntoView {
     let close = Rc::new(move || state.log_open.set(false));
 
     view! {
-        column(class = "ms-log", a11y:role = Role::Log, a11y:label = "Server log") {
-            row(class = "ms-log__strip") {
-                text(class = "ms-log__title") {"Log"}
-                text(class = "ms-log__count") {{move || lines.with(Vec::len).to_string()}}
-                box(class = "ms-log__gap")
+        column(class = "zs-log", a11y:role = Role::Log, a11y:label = "Server log") {
+            row(class = "zs-log__strip") {
+                text(class = "zs-log__title") {"Log"}
+                text(class = "zs-log__count") {{move || lines.with(Vec::len).to_string()}}
+                box(class = "zs-log__gap")
                 Key(
                     svg = Signal::stored_local(icons::ERASER),
                     label = Signal::stored_local("Clear log".to_owned()),
@@ -45,10 +45,10 @@ pub fn LogDock() -> impl IntoView {
                     on_press = close
                 )
             }
-            ScrollArea(class = "ms-log__scroll", label = "Log lines") {
-                column(class = "ms-log__lines") {
+            ScrollArea(class = "zs-log__scroll", label = "Log lines") {
+                column(class = "zs-log__lines") {
                     if move || lines.with(Vec::is_empty) {
-                        text(class = "ms-log__empty") {"Nothing yet"}
+                        text(class = "zs-log__empty") {"Nothing yet"}
                     }
                     for line in move || lines.get(), key = |l: &LogLine| l.id {
                         LogEntry(line = line)

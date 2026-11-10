@@ -118,7 +118,7 @@ pub fn pop_out(state: AppState, client: ClientId, name: String) {
     let root = state.root.get_value();
     root.with(|| {
         windows.open(
-            WindowOptions::new(format!("{name}'s screen — moqspeak"))
+            WindowOptions::new(format!("{name}'s screen — zspeak"))
                 .with_size(1280.0, 800.0)
                 .with_stylesheet(POPOUT_SHEET),
             move || {

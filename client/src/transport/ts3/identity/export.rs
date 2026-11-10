@@ -9,10 +9,10 @@ use base64::engine::general_purpose::{STANDARD, STANDARD_NO_PAD};
 use super::{obfuscate, store};
 
 /// The name an export carries when there is no nickname to put in it.
-const FALLBACK: &str = "moqspeak";
+const FALLBACK: &str = "zspeak";
 
 /// What an export is called.
-const FILE: &str = "moqspeak-identity.ini";
+const FILE: &str = "zspeak-identity.ini";
 
 /// The identity as the INI file the TeamSpeak client imports. `nickname` names it there.
 fn ini(identity: &ts3proto::Identity, nickname: &str) -> String {
@@ -123,7 +123,7 @@ mod tests {
 
     #[test]
     fn writes_a_file_only_this_account_reads() {
-        let dir = std::env::temp_dir().join(format!("moqspeak-export-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("zspeak-export-{}", std::process::id()));
         std::fs::create_dir_all(&dir).expect("a scratch directory");
         let path = dir.join(FILE);
         let identity = ts3proto::generate_identity(0);

@@ -1,5 +1,5 @@
 {
-  "name": "moqspeak-server",
+  "name": "zspeak-server",
   "private": true,
   "type": "module",
   "scripts": {

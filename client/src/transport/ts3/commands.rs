@@ -80,7 +80,7 @@ pub async fn send(client: &ts3proto::Client, me: &Me, action: &Action, out: &Out
             return;
         }
         Action::SetRole { .. } => {
-            out.warn("TeamSpeak grants server groups, which moqspeak does not assign");
+            out.warn("TeamSpeak grants server groups, which zspeak does not assign");
             return;
         }
         Action::Sharing { .. } => return,

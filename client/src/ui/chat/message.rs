@@ -27,24 +27,24 @@ pub fn MessageLine(message: Message, head: bool) -> impl IntoView {
     match message.kind {
         MessageKind::Text { from, own } => view! {
             column(
-                class = "ms-msg",
+                class = "zs-msg",
                 attr:data-head = head.then(|| "true".to_owned()),
                 attr:data-own = own.then(|| "true".to_owned())
             ) {
                 if move || head {
-                    row(class = "ms-msg__head") {
-                        text(class = "ms-msg__from") {{from.clone()}}
-                        text(class = "ms-msg__time") {{time.clone()}}
+                    row(class = "zs-msg__head") {
+                        text(class = "zs-msg__from") {{from.clone()}}
+                        text(class = "zs-msg__time") {{time.clone()}}
                     }
                 }
-                text(class = "ms-msg__text") {{message.text}}
+                text(class = "zs-msg__text") {{message.text}}
             }
         }
         .any(),
         MessageKind::Note => view! {
-            row(class = "ms-msg ms-msg--note") {
+            row(class = "zs-msg zs-msg--note") {
                 Icon(svg = icons::INFO, size = IconSize::Xs)
-                text(class = "ms-msg__text") {{message.text}}
+                text(class = "zs-msg__text") {{message.text}}
             }
         }
         .any(),

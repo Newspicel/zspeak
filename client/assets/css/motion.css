@@ -2,52 +2,52 @@
    from the same values in the theme, so a menu, a dialog and the chat move on one clock. */
 
 :root {
-    --ms-quick: 90ms;
+    --zs-quick: 90ms;
     /* A row that changes place: long enough to follow, short enough to stay out of the way. */
-    --ms-glide: 120ms;
-    --ms-instant: 60ms;
-    --ms-ease: cubic-bezier(0.2, 0, 0, 1);
-    --ms-pulse: 1600ms;
+    --zs-glide: 120ms;
+    --zs-instant: 60ms;
+    --zs-ease: cubic-bezier(0.2, 0, 0, 1);
+    --zs-pulse: 1600ms;
 }
 
 /* A hover tone switches at once, so a fast pointer lights each row it rests on. A chosen row
    fades its tint. */
-.ms-row[data-selected="true"] {
-    transition: background-color var(--ms-quick) var(--ms-ease);
+.zs-row[data-selected="true"] {
+    transition: background-color var(--zs-quick) var(--zs-ease);
 }
 
-.ms-row:hover {
+.zs-row:hover {
     transition: none;
 }
 
-.ms-twisty {
-    transition: transform var(--ms-quick) var(--ms-ease);
+.zs-twisty {
+    transition: transform var(--zs-quick) var(--zs-ease);
 }
 
-.ms-dot {
-    transition: background-color var(--ms-instant) var(--ms-ease),
-                box-shadow var(--ms-instant) var(--ms-ease);
+.zs-dot {
+    transition: background-color var(--zs-instant) var(--zs-ease),
+                box-shadow var(--zs-instant) var(--zs-ease);
 }
 
-.ms-chat-tab__close,
-.ms-servers__row .ms-key {
-    transition: opacity var(--ms-instant) var(--ms-ease);
+.zs-chat-tab__close,
+.zs-servers__row .zs-key {
+    transition: opacity var(--zs-instant) var(--zs-ease);
 }
 
 /* A library control switches its hover tone at once. Its frame and ring keep the library
    clock. */
-.ms-frame .zui-button,
-.ms-frame .zui-toggle,
-.ms-frame .zui-settings__page {
+.zs-frame .zui-button,
+.zs-frame .zui-toggle,
+.zs-frame .zui-settings__page {
     transition-property: border-color, box-shadow;
 }
 
 /* A status mark pulses while what it stands for is on its way to a state. */
-.ms-dot[data-busy="true"] {
-    animation: ms-dot-pulse var(--ms-pulse) var(--ms-ease) infinite;
+.zs-dot[data-busy="true"] {
+    animation: zs-dot-pulse var(--zs-pulse) var(--zs-ease) infinite;
 }
 
-@keyframes ms-dot-pulse {
+@keyframes zs-dot-pulse {
     0% { opacity: 1; }
     50% { opacity: 0.35; }
     100% { opacity: 1; }

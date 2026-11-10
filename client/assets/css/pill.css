@@ -1,7 +1,7 @@
 /* The pill: your own voice controls, floating over the foot of the tree. The seat spans the
    column and lets every press through; only the pill takes one. */
 
-.ms-pill-seat {
+.zs-pill-seat {
     position: absolute;
     left: 0;
     right: 0;
@@ -10,10 +10,10 @@
     pointer-events: none;
 }
 
-.ms-pill {
+.zs-pill {
     align-items: center;
     gap: 2px;
-    height: var(--ms-pill);
+    height: var(--zs-pill);
     padding: 0 5px;
     border: 1px solid var(--zui-color-border);
     border-radius: 999px;
@@ -21,20 +21,20 @@
     color: var(--zui-color-popover-foreground);
     box-shadow: var(--zui-shadow-md);
     pointer-events: auto;
-    animation: ms-rise var(--ms-quick) var(--ms-ease);
+    animation: zs-rise var(--zs-quick) var(--zs-ease);
 }
 
-.ms-pill .ms-key {
+.zs-pill .zs-key {
     width: 30px;
     height: 30px;
     border-radius: 999px;
 }
 
-.ms-pill .ms-key:hover {
-    background-color: var(--ms-menu-hover);
+.zs-pill .zs-key:hover {
+    background-color: var(--zs-menu-hover);
 }
 
-.ms-pill__sep {
+.zs-pill__sep {
     flex: 0 0 auto;
     width: 1px;
     height: 16px;
@@ -43,7 +43,7 @@
 }
 
 /* You: the dot that lights while you transmit, then your name. */
-.ms-pill .zui-button.ms-self[data-size] {
+.zs-pill .zui-button.zs-self[data-size] {
     display: flex;
     flex: 0 1 auto;
     align-items: center;
@@ -62,19 +62,19 @@
     --zui-button-lift: 0 0 transparent;
 }
 
-.ms-pill .zui-button.ms-self[data-size]:hover,
-.ms-pill .zui-button.ms-self[data-size][data-state="open"] {
-    background-color: var(--ms-menu-hover);
+.zs-pill .zui-button.zs-self[data-size]:hover,
+.zs-pill .zui-button.zs-self[data-size][data-state="open"] {
+    background-color: var(--zs-menu-hover);
 }
 
-.ms-self__name {
+.zs-self__name {
     min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.ms-self__kbd {
+.zs-self__kbd {
     flex: 0 0 auto;
     padding: 0 4px;
     border: 1px solid var(--zui-color-border);
@@ -86,12 +86,12 @@
 }
 
 /* The key held to talk lights while it is held. */
-.ms-pill .ms-key.ms-talk[data-on="true"] {
-    background-color: color-mix(in oklab, var(--ms-talk) 18%, transparent);
-    color: var(--ms-talk);
+.zs-pill .zs-key.zs-talk[data-on="true"] {
+    background-color: color-mix(in oklab, var(--zs-talk) 18%, transparent);
+    color: var(--zs-talk);
 }
 
-@keyframes ms-rise {
+@keyframes zs-rise {
     from { opacity: 0; translate: 0 6px; }
     to { opacity: 1; translate: 0 0; }
 }

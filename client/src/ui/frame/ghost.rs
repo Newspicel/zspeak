@@ -23,14 +23,14 @@ pub fn DragGhost() -> impl IntoView {
     view! {
         if move || state.dragging() {
             row(
-                class = "ms-ghost",
+                class = "zs-ghost",
                 style:left = move || Some(format!("{}px", state.pointer.get().0 + 14.0)),
                 style:top = move || Some(format!("{}px", state.pointer.get().1 + 10.0))
             ) {
                 text {{name}}
                 if move || target().is_some() {
                     text {"→"}
-                    text(class = "ms-ghost__to") {{move || target().unwrap_or_default()}}
+                    text(class = "zs-ghost__to") {{move || target().unwrap_or_default()}}
                 }
             }
         }

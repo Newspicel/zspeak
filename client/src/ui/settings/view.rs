@@ -47,21 +47,21 @@ pub fn SettingsView() -> impl IntoView {
         .collect::<Vec<_>>();
 
     view! {
-        Settings(page = page, label = "Settings", class = "ms-settings") {
+        Settings(page = page, label = "Settings", class = "zs-settings") {
             SettingsPages {
-                row(class = "ms-settings__head", on:pointer_down = press::move_window()) {
+                row(class = "zs-settings__head", on:pointer_down = press::move_window()) {
                     Key(
                         svg = Signal::stored_local(icons::CHEVRON_RIGHT),
                         label = Signal::stored_local("Back".to_owned()),
-                        class = "ms-settings__back",
+                        class = "zs-settings__back",
                         on_press = back
                     )
                     text {"Settings"}
                 }
                 {entries}
             }
-            column(class = "ms-settings__main") {
-                box(class = "ms-settings__bar", on:pointer_down = press::move_window())
+            column(class = "zs-settings__main") {
+                box(class = "zs-settings__bar", on:pointer_down = press::move_window())
                 VoicePane(info = info)
                 SoundPane(info = info)
                 AppearancePane()

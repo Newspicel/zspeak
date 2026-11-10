@@ -72,15 +72,15 @@ pub fn ChatPanel(
 
     view! {
         column(
-            class = "ms-chat",
+            class = "zs-chat",
             attr:data-open = move || open.get().then(|| "true".to_owned()),
             attr:data-resizing = move || resizing.get().then(|| "true".to_owned()),
             style:width = move || if open.get() { width() } else { Some("0px".to_owned()) },
             a11y:hidden = move || !open.get()
         ) {
             ChatGrip(resizing = resizing, shown = fitted)
-            column(class = "ms-chat__inner", style:width = width) {
-                row(class = "ms-chat__head", on:pointer_down = press::move_window()) {
+            column(class = "zs-chat__inner", style:width = width) {
+                row(class = "zs-chat__head", on:pointer_down = press::move_window()) {
                     TabStrip {
                         ChatTab(conversation = Conversation::Channel, title = channel_title)
                         ChatTab(conversation = Conversation::Server, title = Signal::stored_local("Server".to_owned()))
@@ -95,13 +95,13 @@ pub fn ChatPanel(
                     )
                 }
                 if move || topic().is_some() {
-                    text(class = "ms-chat__topic") {{move || topic().unwrap_or_default()}}
+                    text(class = "zs-chat__topic") {{move || topic().unwrap_or_default()}}
                 }
                 if move || shown.with(Vec::is_empty) {
-                    column(class = "ms-chat__empty") {"No messages yet"}
+                    column(class = "zs-chat__empty") {"No messages yet"}
                 } else {
-                    ScrollArea(class = "ms-chat__scroll", label = "Messages") {
-                        column(class = "ms-chat__log") {
+                    ScrollArea(class = "zs-chat__scroll", label = "Messages") {
+                        column(class = "zs-chat__log") {
                             for line in move || shown.get(), key = |l: &(Message, bool)| l.0.id {
                                 MessageLine(message = line.0, head = line.1)
                             }

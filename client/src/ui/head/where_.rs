@@ -11,9 +11,9 @@ pub fn Where() -> impl IntoView {
     let channel = move || state.my_channel().map(|c| c.name);
     view! {
         if move || channel().is_some() {
-            row(class = "ms-where") {
-                text(class = "ms-where__sep") {"/"}
-                text(class = "ms-where__name") {{move || channel().unwrap_or_default()}}
+            row(class = "zs-where") {
+                text(class = "zs-where__sep") {"/"}
+                text(class = "zs-where__name") {{move || channel().unwrap_or_default()}}
             }
         }
     }

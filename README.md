@@ -1,4 +1,4 @@
-# moqspeak
+# zspeak
 
 **Media over QUIC Speak** is a voice chat app in the spirit of TeamSpeak: servers with a channel
 tree, push-to-talk or voice activation, text chat, pokes and screen sharing. It is a native Rust
@@ -8,7 +8,7 @@ Cloudflare Worker keeps track of servers, channels and who is where.
 
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="docs/screenshot-light.png">
-  <img src="docs/screenshot-dark.png" alt="moqspeak connected to a server: the channel tree with two people talking in the Lobby, the voice controls below it, the log and the channel chat">
+  <img src="docs/screenshot-dark.png" alt="zspeak connected to a server: the channel tree with two people talking in the Lobby, the voice controls below it, the log and the channel chat">
 </picture>
 
 ## Features
@@ -28,7 +28,7 @@ Cloudflare Worker keeps track of servers, channels and who is where.
 - **Screen sharing** (opt-in at build time). On macOS, Apple's picker shares a single window, an
   app or a display. On Linux and Windows, a display is shared. Viewers watch in a separate
   window. Video is AV1.
-- **TeamSpeak 3 servers** (experimental). Give a `ts3server://` address and moqspeak speaks the
+- **TeamSpeak 3 servers** (experimental). Give a `ts3server://` address and zspeak speaks the
   TeamSpeak 3 protocol instead: talk, move between channels, chat and poke, against a real
   TeamSpeak server. The tree draws TeamSpeak's spacers, so a server keeps the shape it was
   arranged in.
@@ -38,28 +38,28 @@ Cloudflare Worker keeps track of servers, channels and who is where.
 ## Install
 
 Download the build for your system from
-[Releases](https://github.com/Newspicel/moqspeak/releases):
+[Releases](https://github.com/Newspicel/zspeak/releases):
 
 | System | File |
 |---|---|
-| macOS 14 or later (Apple silicon) | `moqspeak-macos-arm64.dmg` |
-| Windows (x86-64) | `moqspeak-windows-x86_64.zip` |
-| Linux (x86-64) | `moqspeak-linux-x86_64.tar.gz` |
+| macOS 14 or later (Apple silicon) | `zspeak-macos-arm64.dmg` |
+| Windows (x86-64) | `zspeak-windows-x86_64.zip` |
+| Linux (x86-64) | `zspeak-linux-x86_64.tar.gz` |
 
 On first start, macOS asks for microphone access.
 
 The release builds leave out screen sharing. To use it, [build from source](#building-from-source)
 with the `screen-share` feature.
 
-## Using moqspeak
+## Using zspeak
 
 Enter a server address and a nickname on the start page, for example
-`moq.newspicel.dev/public`. The part after the slash is the server's name. Any name works: a new
+`zspeak.newspicel.dev/public`. The part after the slash is the server's name. Any name works: a new
 name creates a new server with a default set of channels.
 
 To reach a TeamSpeak 3 server, write its address with the `ts3server://` or `ts3://` scheme, such
 as `ts3server://voice.example.com`. A `port`, `password`, `channel` or `channelpassword` in the
-link is read as well. The scheme alone decides which protocol moqspeak speaks, so saved servers
+link is read as well. The scheme alone decides which protocol zspeak speaks, so saved servers
 of both kinds sit side by side.
 
 | To | Do |
@@ -85,18 +85,18 @@ role stays with the person who has it. The identity is the file `identity.key` b
 
 | System | Directory |
 |---|---|
-| macOS | `~/Library/Application Support/dev.moqspeak.moqspeak/` |
-| Linux | `~/.config/moqspeak/` |
-| Windows | `%APPDATA%\moqspeak\moqspeak\config\` |
+| macOS | `~/Library/Application Support/dev.zspeak.zspeak/` |
+| Linux | `~/.config/zspeak/` |
+| Windows | `%APPDATA%\zspeak\zspeak\config\` |
 
 ## How it works
 
 ```
             ┌────────────── WebSocket (JSON) ───────────────┐
- moqspeak ──┤                                               ├──► Cloudflare Worker
+ zspeak ──┤                                               ├──► Cloudflare Worker
   client    │                                               │    one Durable Object per server:
             │                                               │    channels, people, chat, roles
-            └──── Media over QUIC (IETF draft-16) ──────────┴──► Cloudflare MoQ relay
+            └──── Media over QUIC (IETF draft-18) ──────────┴──► Cloudflare MoQ relay
                   one broadcast per person:
                   "audio"  – Opus, 20 ms frames
                   "screen" – AV1, a new group at every keyframe
@@ -127,22 +127,22 @@ from source.
 - **macOS** needs Xcode 16 or later (the macOS 15 SDK). The app runs on macOS 14 and later.
 
 ```sh
-cargo run -p moqspeak --release                                   # start the app
-cargo run -p moqspeak --release -- moq.newspicel.dev/demo Ada     # connect at start
-cargo run -p moqspeak --release --features screen-share           # with screen sharing
+cargo run -p zspeak --release                                   # start the app
+cargo run -p zspeak --release -- zspeak.newspicel.dev/demo Ada     # connect at start
+cargo run -p zspeak --release --features screen-share           # with screen sharing
 ```
 
 The `screen-share` feature builds in the capture, the AV1 codec, the share key and the
 *Watch screen* item. Without it, none of these exist.
 
-`RUST_LOG` sets the log level, for example `RUST_LOG=moqspeak=debug`.
+`RUST_LOG` sets the log level, for example `RUST_LOG=zspeak=debug`.
 
 To build and install the macOS app bundle:
 
 ```sh
-cargo build -p moqspeak --release
-packaging/macos/bundle.sh          # writes dist/moqspeak.app
-cp -R dist/moqspeak.app /Applications/
+cargo build -p zspeak --release
+packaging/macos/bundle.sh          # writes dist/zspeak.app
+cp -R dist/zspeak.app /Applications/
 ```
 
 ### Testing with bots
@@ -151,9 +151,9 @@ A bot is a headless participant. It joins a server, moves to a channel, beeps ev
 and prints whom it hears. Start a few beside the client to see a populated server:
 
 ```sh
-cargo run -p moqspeak --release -- --bot moq.newspicel.dev/demo Grace Lobby
-cargo run -p moqspeak --release -- --bot moq.newspicel.dev/demo Linus "General Talk" --wander
-cargo run -p moqspeak --release --features screen-share -- --bot moq.newspicel.dev/demo Ken Gaming --share-pattern
+cargo run -p zspeak --release -- --bot zspeak.newspicel.dev/demo Grace Lobby
+cargo run -p zspeak --release -- --bot zspeak.newspicel.dev/demo Linus "General Talk" --wander
+cargo run -p zspeak --release --features screen-share -- --bot zspeak.newspicel.dev/demo Ken Gaming --share-pattern
 ```
 
 `--wander` joins the next channel every few seconds. `--share-pattern` shares a moving test
@@ -163,8 +163,8 @@ pattern and needs the `screen-share` feature.
 
 ```sh
 cargo fmt --check
-cargo clippy -p moqspeak
-cargo test -p moqspeak --locked
+cargo clippy -p zspeak
+cargo test -p zspeak --locked
 cd server && pnpm check
 ```
 
@@ -238,7 +238,7 @@ Without them, the app is signed ad hoc, and Gatekeeper asks the user to approve 
 - macOS builds are Apple silicon only.
 - TeamSpeak 3 support is experimental. It carries voice, channel moves, chat and pokes. It shares
   no screens, leaves channel editing to the TeamSpeak client, and shows everyone as a plain user,
-  because TeamSpeak grants server groups in place of moqspeak's three roles. moqspeak appears on
+  because TeamSpeak grants server groups in place of zspeak's three roles. zspeak appears on
   a TeamSpeak server as a Windows client: a server accepts only a version string TeamSpeak has
   signed, and that signature covers the platform with it.
 

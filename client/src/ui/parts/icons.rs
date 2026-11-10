@@ -102,7 +102,7 @@ pub fn Icon(
 ) -> impl IntoView {
     view! {
         vector(
-            class = "ms-icon",
+            class = "zs-icon",
             class = class,
             attr:data-size = size.token(),
             prop:svg = move || PropValue::from(svg.get()),

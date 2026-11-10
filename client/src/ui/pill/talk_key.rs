@@ -15,7 +15,7 @@ pub fn TalkKey() -> impl IntoView {
         Tooltip {
             TooltipTrigger {
                 control(
-                    class = "ms-key ms-talk",
+                    class = "zs-key zs-talk",
                     attr:data-on = move || state.ptt.get().then(|| "true".to_owned()),
                     a11y:role = Role::Button,
                     a11y:label = "Hold to talk",

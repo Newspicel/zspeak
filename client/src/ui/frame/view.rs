@@ -40,7 +40,7 @@ pub fn Frame() -> impl IntoView {
 
     view! {
         stack(
-            class = "ms-frame",
+            class = "zs-frame",
             attr:data-chat = move || chat_open().then(|| "open".to_owned()),
             attr:data-frame = FrameSource::CURRENT.token(),
             attr:data-window = move || placement.get().token().map(str::to_owned),
@@ -82,14 +82,14 @@ pub fn Frame() -> impl IntoView {
                 }
             }
         ) {
-            row(class = "ms-body") {
+            row(class = "zs-body") {
                 if move || settings() {
                     SettingsView()
                 } else {
-                    column(class = "ms-main") {
+                    column(class = "zs-main") {
                         Head()
                         if move || online() {
-                            column(class = "ms-stage") {
+                            column(class = "zs-stage") {
                                 Tree()
                                 Pill()
                             }

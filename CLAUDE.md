@@ -1,9 +1,9 @@
-# moqspeak
+# zspeak
 
 Voice chat client in the style of TeamSpeak. Rust, zgui, Media over QUIC. The control plane is a Cloudflare Worker.
 
 ## Workspace
-- `client/` is the one Rust crate (`moqspeak`): engine, audio, media, screen share and all UI. `server/` is the Worker in TypeScript (`pnpm check`, `wrangler deploy`).
+- `client/` is the one Rust crate (`zspeak`): engine, audio, media, screen share and all UI. `server/` is the Worker in TypeScript (`pnpm check`, `wrangler deploy`).
 - zgui, zgui-ui, zgui-ui-tokens and zgui-ui-icons are git dependencies on `github.com/zortax/zgui`, pinned to one `rev`. Every zgui crate moves to a new rev together, in its own commit.
 - Add crates with `cargo add`. Never write a version from memory. Use the latest version unless a concrete reason forces an older one.
 - Toolchain is pinned in `rust-toolchain.toml` (same nightly as `~/Projects/zgui`). Do not change it.
@@ -35,15 +35,15 @@ Voice chat client in the style of TeamSpeak. Rust, zgui, Media over QUIC. The co
 - Check zgui-ui before writing a control. Use shipped components with custom styling. Build custom behavior when zgui-ui does not cover it.
 - Generally useful controls and framework fixes go upstream into `~/Projects/zgui`. Never push there.
 - Native elements: `on:pointer_down` for activation where it makes the app feel faster, `on:click` where a press must be cancelable. Read `ev.modifiers` for ctrl/shift logic.
-- Styling: app sheets in `client/assets/css/` for values two components share; scoped `style!` per component where a sheet belongs to one component; `data-*` attributes for state CSS selects on. Class names are `ms-` BEM.
-- Themes are CSS files of `--zui-*` and `--ms-*` declarations in `client/assets/themes/<name>-{light,dark}.css`. No Rust converts a theme into colors. Adding a theme is two files and one line in `ui/theme/variant.rs`.
+- Styling: app sheets in `client/assets/css/` for values two components share; scoped `style!` per component where a sheet belongs to one component; `data-*` attributes for state CSS selects on. Class names are `zs-` BEM.
+- Themes are CSS files of `--zui-*` and `--zs-*` declarations in `client/assets/themes/<name>-{light,dark}.css`. No Rust converts a theme into colors. Adding a theme is two files and one line in `ui/theme/variant.rs`.
 - Status marks are CSS dots with tone tokens, never icons.
 - Icons: lucide SVGs vendored in `client/assets/icons/`, referenced through `icons::NAME` constants. Stroke only, `currentColor`, untransformed.
-- Row height is one constant in Rust and one `--ms-row` variable in CSS.
+- Row height is one constant in Rust and one `--zs-row` variable in CSS.
 - Motion: CSS transitions and keyframes of 120 ms or less, motion tokens only. No timer-driven animation.
 - Compact and flat: planes differ by tone, borders only on floating surfaces.
 
 ## Verify
-- `cargo fmt --check`, `cargo clippy -p moqspeak`, `cargo test -p moqspeak --locked`.
-- Test state logic with plain unit tests. Run the client against `moq.newspicel.dev/public` with a `--bot` beside it to see a populated server.
+- `cargo fmt --check`, `cargo clippy -p zspeak`, `cargo test -p zspeak --locked`.
+- Test state logic with plain unit tests. Run the client against `zspeak.newspicel.dev/public` with a `--bot` beside it to see a populated server.
 - Commit messages: short, active voice, describe the change. No references to plans or specs.

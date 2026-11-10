@@ -6,7 +6,7 @@ use crate::audio::VoiceMode;
 use crate::ui::theme::{Scheme, Variant};
 
 /// The server a new installation offers.
-pub const DEFAULT_ADDRESS: &str = "moq.newspicel.dev/public";
+pub const DEFAULT_ADDRESS: &str = "zspeak.newspicel.dev/public";
 
 /// How wide the chat column opens at first, and the range a drag keeps it in, in CSS pixels.
 pub const CHAT_WIDTH: f32 = 360.0;
@@ -61,7 +61,7 @@ impl Default for Settings {
             nickname,
             address: DEFAULT_ADDRESS.into(),
             bookmarks: vec![Bookmark {
-                label: "moqspeak Public".into(),
+                label: "zspeak Public".into(),
                 address: DEFAULT_ADDRESS.into(),
                 nickname: String::new(),
             }],
@@ -87,7 +87,7 @@ impl Default for Settings {
 
 impl Settings {
     fn path() -> Option<std::path::PathBuf> {
-        directories::ProjectDirs::from("dev", "moqspeak", "moqspeak")
+        directories::ProjectDirs::from("dev", "zspeak", "zspeak")
             .map(|d| d.config_dir().join("settings.json"))
     }
 

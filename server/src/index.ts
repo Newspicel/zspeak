@@ -1,4 +1,4 @@
-// moqspeak control plane.
+// zspeak control plane.
 //
 // One Durable Object per virtual server holds the channel tree and the connected clients. Clients
 // talk to it over a WebSocket with small JSON messages. Voice does not pass through here: every
@@ -258,7 +258,7 @@ export class VoiceServer extends DurableObject<Env> {
 
   async fetch(request: Request): Promise<Response> {
     const url = new URL(request.url);
-    const name = url.searchParams.get("server") ?? "moqspeak";
+    const name = url.searchParams.get("server") ?? "zspeak";
     if (!this.serverName) {
       this.serverName = name;
       this.welcome = `Welcome to ${name}!`;
@@ -291,7 +291,7 @@ export class VoiceServer extends DurableObject<Env> {
     if (msg.t === "hello") {
       if (me && (me as Client).id) return;
       const uid = clean(msg.uid, 64);
-      if (!/^[A-Za-z0-9_-]{43}$/.test(uid)) return this.send(ws, { t: "error", message: "this client is too old; please update moqspeak" });
+      if (!/^[A-Za-z0-9_-]{43}$/.test(uid)) return this.send(ws, { t: "error", message: "this client is too old; please update zspeak" });
       const nonce = b64url(crypto.getRandomValues(new Uint8Array(32)));
       const pending: Pending = {
         pending: true,
@@ -310,7 +310,7 @@ export class VoiceServer extends DurableObject<Env> {
     if (msg.t === "auth") {
       const p = attached as Pending | null;
       if (!p || !p.pending) return this.send(ws, { t: "error", message: "say hello first" });
-      const ok = await verifyIdentity(p.uid, `moqspeak-auth:${this.serverName}:${p.nonce}`, msg.sig);
+      const ok = await verifyIdentity(p.uid, `zspeak-auth:${this.serverName}:${p.nonce}`, msg.sig);
       if (!ok) {
         this.send(ws, { t: "error", message: "identity check failed" });
         ws.close(4001, "identity check failed");
@@ -329,7 +329,7 @@ export class VoiceServer extends DurableObject<Env> {
         deaf: false,
         away: false,
         away_message: "",
-        broadcast: `moqspeak/${this.serverName}/${id}-${crypto.randomUUID().slice(0, 8)}`,
+        broadcast: `zspeak/${this.serverName}/${id}-${crypto.randomUUID().slice(0, 8)}`,
         sharing: false,
         connected_at: Date.now(),
         platform: p.platform,
@@ -602,7 +602,7 @@ interface RelayToken {
   expires: string;
 }
 
-const ROTATING_LABEL = "moqspeak-rotating";
+const ROTATING_LABEL = "zspeak-rotating";
 const TOKEN_LIFETIME = 24 * 3600 * 1000;
 const RENEW_BEFORE = 6 * 3600 * 1000;
 
@@ -694,7 +694,7 @@ export default {
     }
     if (url.pathname === "/") {
       return Response.json({
-        service: "moqspeak",
+        service: "zspeak",
         protocol: PROTOCOL,
         relay: env.MOQ_RELAY,
         usage: "connect a WebSocket to /s/<server-name>",

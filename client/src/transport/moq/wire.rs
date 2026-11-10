@@ -1,4 +1,4 @@
-//! The JSON control protocol the moqspeak Worker speaks. The Worker takes [`Action`] as it
+//! The JSON control protocol the zspeak Worker speaks. The Worker takes [`Action`] as it
 //! stands, so only the handshake and the messages the server sends need a type of their own.
 
 use serde::{Deserialize, Serialize};
@@ -79,7 +79,7 @@ mod tests {
             "channels":[{"id":1,"name":"Lobby","topic":"","description":"","parent":null,"order":0,
             "max_clients":0,"is_default":true,"permanent":true}],
             "clients":[{"id":3,"uid":"u","name":"A","channel":1,"muted":false,"deaf":false,
-            "away":false,"away_message":"","broadcast":"moqspeak/demo/3-x","connected_at":5,
+            "away":false,"away_message":"","broadcast":"zspeak/demo/3-x","connected_at":5,
             "platform":"macOS","version":"0.1"}]}"#;
         let ServerMsg::State {
             channels, clients, ..
@@ -88,7 +88,7 @@ mod tests {
             panic!()
         };
         assert_eq!(channels[0].name, "Lobby");
-        assert_eq!(clients[0].media, "moqspeak/demo/3-x");
+        assert_eq!(clients[0].media, "zspeak/demo/3-x");
     }
 
     #[test]

@@ -11,7 +11,7 @@ use zgui_ui_tokens::prelude::*;
 use crate::ui::theme::Variant;
 
 /// What the sheet is installed under.
-const SHEET: &str = "ms-tokens";
+const SHEET: &str = "zs-tokens";
 
 /// The declarations `variant` carries at `scheme`.
 fn sheet(variant: Variant, scheme: ColorScheme) -> String {

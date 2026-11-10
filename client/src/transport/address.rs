@@ -1,5 +1,5 @@
 //! Where to connect, and which transport takes us there. The scheme decides: `ts3server://` and
-//! `ts3://` reach a TeamSpeak 3 server, anything else reaches a moqspeak Worker.
+//! `ts3://` reach a TeamSpeak 3 server, anything else reaches a zspeak Worker.
 
 use anyhow::{Result, anyhow};
 
@@ -10,8 +10,8 @@ pub enum Address {
     Ts3(Ts3),
 }
 
-/// A moqspeak Worker and the server hosted on it, such as
-/// `moqspeak.example.workers.dev/myserver`.
+/// A zspeak Worker and the server hosted on it, such as
+/// `zspeak.example.workers.dev/myserver`.
 #[derive(Clone, Debug, PartialEq)]
 pub struct Moq {
     pub ws_url: String,
@@ -190,8 +190,8 @@ mod tests {
 
     #[test]
     fn parses_worker_addresses() {
-        let a = moq("moqspeak.example.workers.dev/demo");
-        assert_eq!(a.ws_url, "wss://moqspeak.example.workers.dev/s/demo");
+        let a = moq("zspeak.example.workers.dev/demo");
+        assert_eq!(a.ws_url, "wss://zspeak.example.workers.dev/s/demo");
         let a = moq("https://x.dev/s/team/");
         assert_eq!(a.ws_url, "wss://x.dev/s/team");
         let a = moq("localhost:8787");

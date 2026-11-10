@@ -44,32 +44,32 @@ pub fn ConnectField() -> impl IntoView {
     };
 
     view! {
-        column(class = "ms-connect") {
-            row(class = "ms-connect__line") {
-                text(class = "ms-connect__label") {"Server"}
-                Input(value = address, label = "Server address", placeholder = "host/server", class = "ms-connect__input", disabled = busy, on:key_down = on_enter)
+        column(class = "zs-connect") {
+            row(class = "zs-connect__line") {
+                text(class = "zs-connect__label") {"Server"}
+                Input(value = address, label = "Server address", placeholder = "host/server", class = "zs-connect__input", disabled = busy, on:key_down = on_enter)
             }
-            row(class = "ms-connect__line") {
-                text(class = "ms-connect__label") {"Nickname"}
-                Input(value = nickname, label = "Nickname", class = "ms-connect__input", disabled = busy, on:key_down = on_enter)
+            row(class = "zs-connect__line") {
+                text(class = "zs-connect__label") {"Nickname"}
+                Input(value = nickname, label = "Nickname", class = "zs-connect__input", disabled = busy, on:key_down = on_enter)
             }
         }
-        row(class = "ms-home__actions") {
+        row(class = "zs-home__actions") {
             row(
-                class = "ms-home__status",
+                class = "zs-home__status",
                 attr:data-tone = move || status().map(|(_, tone)| tone.to_owned()).filter(|t| !t.is_empty())
             ) {
                 if move || connecting() {
-                    box(class = "ms-busy") { Icon(svg = icons::LOADER_CIRCLE, size = IconSize::Xs) }
+                    box(class = "zs-busy") { Icon(svg = icons::LOADER_CIRCLE, size = IconSize::Xs) }
                 }
-                text(class = "ms-home__status-text") {{move || status().map(|(text, _)| text).unwrap_or_default()}}
+                text(class = "zs-home__status-text") {{move || status().map(|(text, _)| text).unwrap_or_default()}}
             }
             // While an attempt runs the key stops it, so a server that never answers is never a
             // dead end.
             Button(
                 variant = ButtonVariant::Outline,
                 size = ButtonSize::Sm,
-                class = "ms-accent-key",
+                class = "zs-accent-key",
                 on:click = move |_| {
                     if matches!(state.status.get_untracked(), ConnStatus::Connecting(_)) {
                         state.disconnect();

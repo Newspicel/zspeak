@@ -13,6 +13,6 @@ pub fn Tag(
     tone: &'static str,
 ) -> impl IntoView {
     view! {
-        text(class = "ms-tag", attr:data-tone = (!tone.is_empty()).then(|| tone.to_owned())) {{text}}
+        text(class = "zs-tag", attr:data-tone = (!tone.is_empty()).then(|| tone.to_owned())) {{text}}
     }
 }

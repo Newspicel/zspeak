@@ -1,4 +1,4 @@
-//! One session with a moqspeak Worker: a control WebSocket carrying JSON, and a MoQ media session
+//! One session with a zspeak Worker: a control WebSocket carrying JSON, and a MoQ media session
 //! beside it carrying voice and screens.
 
 use std::collections::hash_map::Entry;
@@ -23,7 +23,7 @@ use crate::transport::moq::wire::{Handshake, ServerMsg};
 use crate::transport::{Action, Out};
 use crate::transport::{Capabilities, ConnStatus, Event, MediaStatus, Session, Transport, address};
 
-/// A moqspeak Worker, with voice and screens on the MoQ relay it hands out.
+/// A zspeak Worker, with voice and screens on the MoQ relay it hands out.
 pub struct Worker;
 
 impl Transport for Worker {

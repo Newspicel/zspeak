@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=moqspeak
+Name=zspeak
 Comment=Voice chat over Media over QUIC
-Exec=moqspeak
-Icon=moqspeak
+Exec=zspeak
+Icon=zspeak
 Terminal=false
 Categories=Network;Chat;AudioVideo;

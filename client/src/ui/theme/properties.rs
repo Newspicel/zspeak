@@ -65,7 +65,7 @@ mod tests {
             for css in [variant.light_css(), variant.dark_css()] {
                 for name in names(css) {
                     assert!(
-                        name.starts_with("zui-") || name.starts_with("ms-"),
+                        name.starts_with("zui-") || name.starts_with("zs-"),
                         "{} declares --{name}",
                         variant.name()
                     );
@@ -85,7 +85,7 @@ mod tests {
                 };
                 let popover = read("zui-color-popover");
                 let text = read("zui-color-popover-foreground");
-                let hover = read("ms-menu-hover");
+                let hover = read("zs-menu-hover");
                 assert!(
                     (hover - popover).abs() >= 0.06,
                     "{} {surface} lights a menu row too faintly",

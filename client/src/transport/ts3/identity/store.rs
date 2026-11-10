@@ -11,7 +11,7 @@ const SECURITY_LEVEL: i32 = 8;
 
 /// Where the identity is kept.
 pub fn path() -> Option<PathBuf> {
-    directories::ProjectDirs::from("dev", "moqspeak", "moqspeak")
+    directories::ProjectDirs::from("dev", "zspeak", "zspeak")
         .map(|d| d.config_dir().join("teamspeak.identity"))
 }
 
@@ -83,8 +83,7 @@ mod tests {
     use super::*;
 
     fn scratch(name: &str) -> PathBuf {
-        let dir =
-            std::env::temp_dir().join(format!("moqspeak-store-{}-{name}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("zspeak-store-{}-{name}", std::process::id()));
         let _ = std::fs::remove_dir_all(&dir);
         std::fs::create_dir_all(&dir).expect("a scratch directory");
         dir

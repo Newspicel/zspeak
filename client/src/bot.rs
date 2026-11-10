@@ -1,4 +1,4 @@
-//! A headless participant for testing: `moqspeak --bot <address> <nickname> [channel]`.
+//! A headless participant for testing: `zspeak --bot <address> <nickname> [channel]`.
 //!
 //! It joins the server, moves to the named channel, beeps a short tone every two seconds over
 //! MoQ, and prints who it hears. With `--share-pattern` it also shares a moving test pattern, in a build

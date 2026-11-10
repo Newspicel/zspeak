@@ -2,7 +2,7 @@
 //!
 //! Every client publishes one broadcast with one track, `audio`, that carries a group per Opus
 //! packet. A client subscribes to the broadcasts of the other clients in its channel. The relay
-//! is Cloudflare's draft-16 MoQ relay; the control server hands out its URL and token.
+//! is Cloudflare's draft-18 MoQ relay; the control server hands out its URL and token.
 
 use std::collections::HashMap;
 use std::sync::Arc;
@@ -375,6 +375,6 @@ mod tests {
         assert_eq!(u.as_str(), "https://relay.example.com/abc.def.ghi");
         let u = relay_url("https://relay.example.com/", None).unwrap();
         assert_eq!(u.as_str(), "https://relay.example.com/");
-        assert_eq!(room_of("moqspeak/demo/3-ab"), "moqspeak/demo");
+        assert_eq!(room_of("zspeak/demo/3-ab"), "zspeak/demo");
     }
 }

@@ -30,7 +30,7 @@ pub fn ChatTab(
 
     view! {
         control(
-            class = "ms-chat-tab",
+            class = "zs-chat-tab",
             node_ref = node,
             attr:data-active = move || active().then(|| "true".to_owned()),
             tabindex = Focus::Sequential,
@@ -40,13 +40,13 @@ pub fn ChatTab(
             on:pointer_down = press::press(),
             on:click = move |_| state.chat.update(|c| c.show(conversation))
         ) {
-            text(class = "ms-chat-tab__name") {{move || title.get()}}
+            text(class = "zs-chat-tab__name") {{move || title.get()}}
             if move || unread() {
-                box(class = "ms-chat-tab__unread", a11y:hidden = true)
+                box(class = "zs-chat-tab__unread", a11y:hidden = true)
             }
             if move || closable {
                 control(
-                    class = "ms-chat-tab__close",
+                    class = "zs-chat-tab__close",
                     a11y:role = Role::Button,
                     a11y:label = "Close conversation",
                     on:pointer_down = press::hold(),

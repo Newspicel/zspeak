@@ -1,10 +1,10 @@
 [package]
-name = "moqspeak"
+name = "zspeak"
 version = "0.1.0"
 edition = "2024"
 description = "A TeamSpeak-style voice client built on zgui and Media over QUIC"
 license = "ISC"
-repository = "https://github.com/Newspicel/moqspeak"
+repository = "https://github.com/Newspicel/zspeak"
 
 [features]
 # Offers to share and watch screens.

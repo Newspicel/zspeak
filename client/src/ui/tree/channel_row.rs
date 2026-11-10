@@ -34,7 +34,7 @@ pub fn ChannelLine(id: ChannelId, row: Signal<ChannelRow, LocalStorage>) -> impl
         ContextMenu {
             ContextMenuTrigger {
                 row(
-                    class = "ms-row ms-row--channel",
+                    class = "zs-row zs-row--channel",
                     attr:data-spacer = move || row.with(|r| r.spacer.map(|s| s.name().to_owned())),
                     attr:data-selected = move || (!ruled.get() && state.selected.get() == Selection::Channel(id)).then(|| "true".to_owned()),
                     attr:data-mine = move || row.with(|r| r.mine).then(|| "true".to_owned()),
@@ -72,7 +72,7 @@ pub fn ChannelLine(id: ChannelId, row: Signal<ChannelRow, LocalStorage>) -> impl
                     }
                 ) {
                     control(
-                        class = "ms-twisty",
+                        class = "zs-twisty",
                         attr:data-open = move || (!collapsed.get()).then(|| "true".to_owned()),
                         attr:data-empty = move || (!has_children.get()).then(|| "true".to_owned()),
                         a11y:label = move || SharedString::from(if collapsed.get() { "Expand" } else { "Collapse" }),
@@ -82,13 +82,13 @@ pub fn ChannelLine(id: ChannelId, row: Signal<ChannelRow, LocalStorage>) -> impl
                         Icon(svg = icons::CHEVRON_RIGHT, size = IconSize::Xs)
                     }
                     if move || plain.get() {
-                        Icon(svg = mark, size = IconSize::Sm, class = "ms-row__mark")
+                        Icon(svg = mark, size = IconSize::Sm, class = "zs-row__mark")
                     }
-                    text(class = "ms-row__name") {{move || row.with(ChannelRow::label)}}
-                    box(class = "ms-row__gap")
+                    text(class = "zs-row__name") {{move || row.with(ChannelRow::label)}}
+                    box(class = "zs-row__gap")
                     if move || row.with(|r| r.count > 0) {
                         text(
-                            class = "ms-row__count",
+                            class = "zs-row__count",
                             attr:data-full = move || row.with(|r| r.full).then(|| "true".to_owned())
                         ) {{move || row.with(|r| r.count.to_string())}}
                     }

@@ -24,14 +24,14 @@ jobs:
         include:
           - name: linux-x86_64
             os: ubuntu-24.04
-            exe: moqspeak
+            exe: zspeak
           - name: macos-arm64
             # The ScreenCaptureKit bridge needs the macOS 15 SDK; the app itself runs on 14+.
             os: macos-15
-            exe: moqspeak
+            exe: zspeak
           - name: windows-x86_64
             os: windows-latest
-            exe: moqspeak.exe
+            exe: zspeak.exe
     env:
       MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
     defaults:
@@ -68,20 +68,20 @@ jobs:
       - uses: Swatinem/rust-cache@v2
 
       - name: test
-        run: cargo test -p moqspeak --locked
+        run: cargo test -p zspeak --locked
 
       - name: build release
-        run: cargo build -p moqspeak --release --locked
+        run: cargo build -p zspeak --release --locked
 
       - name: package (linux)
         if: runner.os == 'Linux'
         run: |
-          mkdir -p dist/moqspeak
-          cp target/release/moqspeak README.md LICENSE dist/moqspeak/
-          cp client/assets/icons/LICENSE dist/moqspeak/LICENSE-lucide
-          cp packaging/icon/moqspeak-512.png dist/moqspeak/moqspeak.png
-          cp packaging/linux/moqspeak.desktop dist/moqspeak/
-          tar -C dist -czf dist/moqspeak-${{ matrix.name }}.tar.gz moqspeak
+          mkdir -p dist/zspeak
+          cp target/release/zspeak README.md LICENSE dist/zspeak/
+          cp client/assets/icons/LICENSE dist/zspeak/LICENSE-lucide
+          cp packaging/icon/zspeak-512.png dist/zspeak/zspeak.png
+          cp packaging/linux/zspeak.desktop dist/zspeak/
+          tar -C dist -czf dist/zspeak-${{ matrix.name }}.tar.gz zspeak
 
       # Signing and notarization run when the Apple secrets are set; otherwise the app is signed
       # ad hoc and Gatekeeper asks the user to approve it on first launch.
@@ -112,38 +112,38 @@ jobs:
           APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
           APPLE_API_ISSUER_ID: ${{ secrets.APPLE_API_ISSUER_ID }}
         run: |
-          packaging/macos/bundle.sh target/release/moqspeak
-          DMG=dist/moqspeak-${{ matrix.name }}.dmg
+          packaging/macos/bundle.sh target/release/zspeak
+          DMG=dist/zspeak-${{ matrix.name }}.dmg
           if [ -n "$MACOS_SIGNING_IDENTITY" ] && [ -n "$APPLE_API_KEY" ]; then
             echo "$APPLE_API_KEY" | base64 --decode > "$RUNNER_TEMP/AuthKey.p8"
             notarize() {
               xcrun notarytool submit "$1" --key "$RUNNER_TEMP/AuthKey.p8" \
                 --key-id "$APPLE_API_KEY_ID" --issuer "$APPLE_API_ISSUER_ID" --wait --timeout 30m
             }
-            ditto -c -k --keepParent dist/moqspeak.app "$RUNNER_TEMP/app.zip"
+            ditto -c -k --keepParent dist/zspeak.app "$RUNNER_TEMP/app.zip"
             notarize "$RUNNER_TEMP/app.zip"
-            xcrun stapler staple dist/moqspeak.app
+            xcrun stapler staple dist/zspeak.app
           fi
-          hdiutil create -volname moqspeak -srcfolder dist/moqspeak.app -ov -format UDZO "$DMG"
+          hdiutil create -volname zspeak -srcfolder dist/zspeak.app -ov -format UDZO "$DMG"
           if [ -n "$MACOS_SIGNING_IDENTITY" ] && [ -n "$APPLE_API_KEY" ]; then
             codesign --force --timestamp --sign "$MACOS_SIGNING_IDENTITY" "$DMG"
             notarize "$DMG"
             xcrun stapler staple "$DMG"
             rm "$RUNNER_TEMP/AuthKey.p8"
           fi
-          (cd dist && ditto -c -k --keepParent moqspeak.app moqspeak-${{ matrix.name }}.zip)
+          (cd dist && ditto -c -k --keepParent zspeak.app zspeak-${{ matrix.name }}.zip)
 
       - name: package (windows)
         if: runner.os == 'Windows'
         run: |
-          mkdir -p dist/moqspeak
-          cp target/release/moqspeak.exe README.md LICENSE dist/moqspeak/
-          cp client/assets/icons/LICENSE dist/moqspeak/LICENSE-lucide
-          cd dist && 7z a moqspeak-${{ matrix.name }}.zip moqspeak
+          mkdir -p dist/zspeak
+          cp target/release/zspeak.exe README.md LICENSE dist/zspeak/
+          cp client/assets/icons/LICENSE dist/zspeak/LICENSE-lucide
+          cd dist && 7z a zspeak-${{ matrix.name }}.zip zspeak
 
       - uses: actions/upload-artifact@v4
         with:
-          name: moqspeak-${{ matrix.name }}
+          name: zspeak-${{ matrix.name }}
           path: |
             dist/*.tar.gz
             dist/*.zip

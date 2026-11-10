@@ -4,7 +4,7 @@
 .zui-menu,
 .zui-select__list,
 .zui-native-select__list {
-    --zui-color-accent: var(--ms-menu-hover);
+    --zui-color-accent: var(--zs-menu-hover);
 }
 
 /* A row of a menu or a list popup is one menu row tall, with its text one step under the text
@@ -13,10 +13,10 @@
 .zui-menu .zui-menu__label,
 .zui-select__list .zui-select__item,
 .zui-native-select__list .zui-native-select__option {
-    min-height: var(--ms-menu-row);
+    min-height: var(--zs-menu-row);
     padding-top: 4px;
     padding-bottom: 4px;
-    font-size: var(--ms-menu-text);
+    font-size: var(--zs-menu-text);
     line-height: 16px;
 }
 
@@ -54,18 +54,18 @@
 }
 
 /* A menu row with a mark before its word. */
-.ms-menu-row {
+.zs-menu-row {
     align-items: center;
     gap: 8px;
     min-width: 0;
 }
 
-.ms-menu-row .ms-dot {
+.zs-menu-row .zs-dot {
     width: 6px;
     height: 6px;
 }
 
-.ms-menu-row__text {
+.zs-menu-row__text {
     flex: 1 1 auto;
     min-width: 0;
     white-space: nowrap;
@@ -73,22 +73,22 @@
     text-overflow: ellipsis;
 }
 
-.ms-menu-row__hint {
+.zs-menu-row__hint {
     flex: 0 0 auto;
     color: var(--zui-color-muted-foreground);
     font-size: var(--zui-type-size-xs);
 }
 
 /* A mark before a row's word: quiet at rest, the row's tone under the pointer or the keys. */
-.zui-menu .zui-menu__item .ms-icon {
+.zui-menu .zui-menu__item .zs-icon {
     color: var(--zui-color-muted-foreground);
 }
 
-.zui-menu .zui-menu__item:hover .ms-icon,
-.zui-menu .zui-menu__item:focus .ms-icon {
+.zui-menu .zui-menu__item:hover .zs-icon,
+.zui-menu .zui-menu__item:focus .zs-icon {
     color: inherit;
 }
 
-.zui-menu .zui-menu__item--destructive .ms-icon {
+.zui-menu .zui-menu__item--destructive .zs-icon {
     color: var(--zui-color-destructive);
 }

@@ -47,7 +47,7 @@ pub fn ClientLine(id: ClientId, row: Signal<ClientRow, LocalStorage>) -> impl In
         ContextMenu {
             ContextMenuTrigger {
                 row(
-                    class = "ms-row ms-row--client",
+                    class = "zs-row zs-row--client",
                     attr:data-selected = move || (state.selected.get() == Selection::Client(id)).then(|| "true".to_owned()),
                     attr:data-away = move || row.with(|r| r.away).then(|| "true".to_owned()),
                     style:padding-left = move || px(indent(row.with(|r| r.depth)) + CLIENT_INSET),
@@ -82,7 +82,7 @@ pub fn ClientLine(id: ClientId, row: Signal<ClientRow, LocalStorage>) -> impl In
                     }
                 ) {
                     StatusDot(tone = tone)
-                    text(class = "ms-row__name") {{move || row.with(|r| r.name.clone())}}
+                    text(class = "zs-row__name") {{move || row.with(|r| r.name.clone())}}
                     if move || me() {
                         Tag(text = "you")
                     }
@@ -94,22 +94,22 @@ pub fn ClientLine(id: ClientId, row: Signal<ClientRow, LocalStorage>) -> impl In
                     }
                     // A server that names its own standings carries the name itself.
                     if move || row.with(|r| !r.rank.is_empty()) {
-                        text(class = "ms-tag") {{move || row.with(|r| r.rank.clone())}}
+                        text(class = "zs-tag") {{move || row.with(|r| r.rank.clone())}}
                     }
                     LiveTag(row = row)
-                    box(class = "ms-row__gap")
-                    row(class = "ms-row__flags") {
+                    box(class = "zs-row__gap")
+                    row(class = "zs-row__flags") {
                         if move || row.with(|r| r.away) {
-                            Icon(svg = icons::MOON, size = IconSize::Xs, class = "ms-row__flag")
+                            Icon(svg = icons::MOON, size = IconSize::Xs, class = "zs-row__flag")
                         }
                         if move || row.with(|r| r.muted) {
-                            Icon(svg = icons::MIC_OFF, size = IconSize::Xs, class = "ms-row__flag")
+                            Icon(svg = icons::MIC_OFF, size = IconSize::Xs, class = "zs-row__flag")
                         }
                         if move || row.with(|r| r.deaf) {
-                            Icon(svg = icons::HEADPHONE_OFF, size = IconSize::Xs, class = "ms-row__flag")
+                            Icon(svg = icons::HEADPHONE_OFF, size = IconSize::Xs, class = "zs-row__flag")
                         }
                         if move || locally_muted.get() {
-                            Icon(svg = icons::VOLUME_X, size = IconSize::Xs, class = "ms-row__flag")
+                            Icon(svg = icons::VOLUME_X, size = IconSize::Xs, class = "zs-row__flag")
                         }
                     }
                 }

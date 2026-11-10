@@ -39,7 +39,7 @@ pub fn ChatGrip(
 
     view! {
         control(
-            class = "ms-chat__grip",
+            class = "zs-chat__grip",
             tabindex = Focus::Sequential,
             a11y:role = Role::Splitter,
             a11y:label = "Chat width",

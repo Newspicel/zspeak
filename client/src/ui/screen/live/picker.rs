@@ -22,10 +22,10 @@ pub fn ShareBody() -> impl IntoView {
             DialogTitle {"Share your screen"}
             DialogDescription {"Everyone in your channel can watch."}
         }
-        column(class = "ms-monitors") {
+        column(class = "zs-monitors") {
             for m in move || monitors.get_value(), key = |m: &MonitorInfo| m.id {
                 row(
-                    class = "ms-monitor",
+                    class = "zs-monitor",
                     tabindex = Focus::Sequential,
                     a11y:role = Role::Button,
                     a11y:label = m.name.clone(),
@@ -35,8 +35,8 @@ pub fn ShareBody() -> impl IntoView {
                     }
                 ) {
                     Icon(svg = icons::MONITOR, size = IconSize::Sm)
-                    text(class = "ms-monitor__name") {{format!("{}{}", m.name, if m.primary { " · main" } else { "" })}}
-                    text(class = "ms-monitor__size") {{format!("{} × {}", m.width, m.height)}}
+                    text(class = "zs-monitor__name") {{format!("{}{}", m.name, if m.primary { " · main" } else { "" })}}
+                    text(class = "zs-monitor__size") {{format!("{} × {}", m.width, m.height)}}
                 }
             }
         }

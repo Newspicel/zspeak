@@ -6,13 +6,13 @@ fn main() {
         // A dependency's link arguments do not reach the final binary, so the rpath goes here.
         println!("cargo:rustc-link-arg=-Wl,-rpath,/usr/lib/swift");
     }
-    println!("cargo:rerun-if-changed=../packaging/icon/moqspeak.ico");
+    println!("cargo:rerun-if-changed=../packaging/icon/zspeak.ico");
     #[cfg(windows)]
     {
         let mut res = winresource::WindowsResource::new();
-        res.set_icon("../packaging/icon/moqspeak.ico");
-        res.set("ProductName", "moqspeak");
-        res.set("FileDescription", "moqspeak");
+        res.set_icon("../packaging/icon/zspeak.ico");
+        res.set("ProductName", "zspeak");
+        res.set("FileDescription", "zspeak");
         res.compile().expect("compiling the Windows resources");
     }
 }

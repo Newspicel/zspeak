@@ -24,10 +24,10 @@ pub fn Pill() -> impl IntoView {
     let label = |text: &'static str| Signal::stored_local(text.to_owned());
 
     view! {
-        row(class = "ms-pill-seat") {
-            row(class = "ms-pill", a11y:role = Role::Toolbar, a11y:label = "Your voice") {
+        row(class = "zs-pill-seat") {
+            row(class = "zs-pill", a11y:role = Role::Toolbar, a11y:label = "Your voice") {
                 SelfMenu()
-                box(class = "ms-pill__sep")
+                box(class = "zs-pill__sep")
                 Key(
                     svg = Signal::derive_local(move || if state.mic_muted.get() { icons::MIC_OFF } else { icons::MIC }),
                     label = Signal::derive_local(move || if state.mic_muted.get() { "Unmute microphone" } else { "Mute microphone" }.to_owned()),
@@ -55,7 +55,7 @@ pub fn Pill() -> impl IntoView {
                 if move || state.voice_mode.get() == VoiceMode::PushToTalk {
                     TalkKey()
                 }
-                box(class = "ms-pill__sep")
+                box(class = "zs-pill__sep")
                 if move || state.offers_share() {
                     ShareKey()
                 }

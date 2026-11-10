@@ -18,22 +18,22 @@
     --zui-icon-lg: 20px;
 
     /* The regions of the window. */
-    --ms-bar: 40px;
-    --ms-keys: 96px;
-    --ms-key: 28px;
-    --ms-log: 180px;
-    --ms-strip: 30px;
-    --ms-pill: 40px;
-    --ms-home: 520px;
+    --zs-bar: 40px;
+    --zs-keys: 96px;
+    --zs-key: 28px;
+    --zs-log: 180px;
+    --zs-strip: 30px;
+    --zs-pill: 40px;
+    --zs-home: 520px;
 
     /* One row of the channel tree. `ROW` in Rust holds the same length. */
-    --ms-row: 28px;
+    --zs-row: 28px;
     /* A row of a menu or a list popup, and the text on it. */
-    --ms-menu-row: 24px;
-    --ms-menu-text: 13px;
+    --zs-menu-row: 24px;
+    --zs-menu-text: 13px;
     /* One line of the log. */
-    --ms-log-row: 22px;
+    --zs-log-row: 22px;
 
     /* How wide a window edge is to grab. */
-    --ms-grab: 6px;
+    --zs-grab: 6px;
 }

@@ -7,14 +7,14 @@ use crate::ui::parts::Erase;
 
 /// Every edge and corner, with the class that places it.
 const EDGES: [(ResizeEdge, &str); 8] = [
-    (ResizeEdge::North, "ms-edge ms-edge--n"),
-    (ResizeEdge::South, "ms-edge ms-edge--s"),
-    (ResizeEdge::West, "ms-edge ms-edge--w"),
-    (ResizeEdge::East, "ms-edge ms-edge--e"),
-    (ResizeEdge::NorthWest, "ms-edge ms-edge--nw"),
-    (ResizeEdge::NorthEast, "ms-edge ms-edge--ne"),
-    (ResizeEdge::SouthWest, "ms-edge ms-edge--sw"),
-    (ResizeEdge::SouthEast, "ms-edge ms-edge--se"),
+    (ResizeEdge::North, "zs-edge zs-edge--n"),
+    (ResizeEdge::South, "zs-edge zs-edge--s"),
+    (ResizeEdge::West, "zs-edge zs-edge--w"),
+    (ResizeEdge::East, "zs-edge zs-edge--e"),
+    (ResizeEdge::NorthWest, "zs-edge zs-edge--nw"),
+    (ResizeEdge::NorthEast, "zs-edge zs-edge--ne"),
+    (ResizeEdge::SouthWest, "zs-edge zs-edge--sw"),
+    (ResizeEdge::SouthEast, "zs-edge zs-edge--se"),
 ];
 
 /// The grab strips, where the window draws its own frame. CSS hides them while the window is
@@ -30,5 +30,5 @@ pub fn ResizeEdges() -> impl IntoView {
             view! { box(class = class, on:pointer_down = window.resize_drag_handler(edge)) }.any()
         })
         .collect::<Vec<_>>();
-    own_frame(view! { box(class = "ms-edges") {{strips}} })
+    own_frame(view! { box(class = "zs-edges") {{strips}} })
 }

@@ -26,11 +26,11 @@ pub fn AppearancePane() -> impl IntoView {
             SettingsGroup {
                 SettingsGroupLabel {"Theme"}
                 SettingsGroupDescription {"The palette the window wears, at a light and at a dark surface."}
-                row(class = "ms-themes", a11y:role = Role::RadioGroup, a11y:label = "Theme") {
+                row(class = "zs-themes", a11y:role = Role::RadioGroup, a11y:label = "Theme") {
                     {Variant::ALL.iter().map(|variant| view! { ThemeCard(variant = *variant) }.any()).collect::<Vec<_>>()}
                 }
                 SettingsItem(label = "Surface", description = "System follows the desktop.") {
-                    ToggleGroup(value = scheme, spacing = 2.0, label = "Surface", class = "ms-switch") {
+                    ToggleGroup(value = scheme, spacing = 2.0, label = "Surface", class = "zs-switch") {
                         {Scheme::ALL.iter().map(|s| view! { ToggleGroupItem(value = s.name()) {{s.label()}} }.any()).collect::<Vec<_>>()}
                     }
                 }

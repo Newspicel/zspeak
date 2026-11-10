@@ -1,5 +1,5 @@
 //! What the interface asks a server to do. Every transport reads the same actions and speaks them
-//! in its own protocol. The moqspeak Worker takes them as its wire format directly.
+//! in its own protocol. The zspeak Worker takes them as its wire format directly.
 
 use serde::Serialize;
 

@@ -53,7 +53,7 @@ pub fn Key(
         Tooltip {
             TooltipTrigger {
                 control(
-                    class = "ms-key",
+                    class = "zs-key",
                     class = class,
                     attr:data-on = move || on.get().then(|| "true".to_owned()),
                     attr:data-tone = (!tone.is_empty()).then(|| tone.to_owned()),
@@ -67,7 +67,7 @@ pub fn Key(
                 ) {
                     Icon(svg = svg, size = IconSize::Sm)
                     if move || dot.get() {
-                        box(class = "ms-key__dot", a11y:hidden = true)
+                        box(class = "zs-key__dot", a11y:hidden = true)
                     }
                 }
             }

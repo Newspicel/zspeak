@@ -3856,7 +3856,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "moqspeak"
+name = "zspeak"
 version = "0.1.0"
 dependencies = [
  "anyhow",

@@ -16,9 +16,9 @@ pub fn ValueSlider(
     on_change: UnsyncCallback<f64>,
 ) -> impl IntoView {
     view! {
-        row(class = "ms-settings__slider") {
+        row(class = "zs-settings__slider") {
             Slider(value = value, min = min, max = max, step = step, label = label, on_change = on_change)
-            text(class = "ms-settings__value") {{move || format!("{:.0}{unit}", value.get())}}
+            text(class = "zs-settings__value") {{move || format!("{:.0}{unit}", value.get())}}
         }
     }
 }

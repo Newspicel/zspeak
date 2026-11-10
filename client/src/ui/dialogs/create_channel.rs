@@ -43,7 +43,7 @@ pub fn CreateChannelBody() -> impl IntoView {
             DialogTitle {"New channel"}
             DialogDescription {{subtitle.get_value()}}
         }
-        column(class = "ms-form") {
+        column(class = "zs-form") {
             FormRow(label = "Name") { Input(value = name, label = "Channel name") }
             FormRow(label = "Topic") { Input(value = topic, label = "Topic") }
             FormRow(label = "Description") { Textarea(value = description, label = "Description") }

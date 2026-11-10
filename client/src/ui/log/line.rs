@@ -10,10 +10,10 @@ use crate::ui::state::LogLine;
 pub fn LogEntry(line: LogLine) -> impl IntoView {
     let tone = line.tone.token();
     view! {
-        row(class = "ms-log-line", attr:data-tone = tone) {
-            text(class = "ms-log-line__time") {{line.time}}
+        row(class = "zs-log-line", attr:data-tone = tone) {
+            text(class = "zs-log-line__time") {{line.time}}
             StatusDot(tone = Signal::stored_local(tone))
-            text(class = "ms-log-line__text") {{line.text}}
+            text(class = "zs-log-line__text") {{line.text}}
         }
     }
 }

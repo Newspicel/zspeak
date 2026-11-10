@@ -22,17 +22,17 @@ fn facts(state: AppState) -> AnyView {
         .map(|at| format!(" · connected {}", short(at.elapsed().as_secs())))
         .unwrap_or_default();
     view! {
-        column(class = "ms-server-facts") {
-            text(class = "ms-server-facts__title") {{state.server_label()}}
-            row(class = "ms-server-facts__line") {
+        column(class = "zs-server-facts") {
+            text(class = "zs-server-facts__title") {{state.server_label()}}
+            row(class = "zs-server-facts__line") {
                 Icon(svg = icons::GLOBE, size = IconSize::Xs)
                 text {{address}}
             }
-            row(class = "ms-server-facts__line") {
+            row(class = "zs-server-facts__line") {
                 Icon(svg = icons::USERS, size = IconSize::Xs)
                 text {{format!("{online} online · {channels} channels{since}")}}
             }
-            row(class = "ms-server-facts__line") {
+            row(class = "zs-server-facts__line") {
                 Icon(svg = icons::AUDIO_LINES, size = IconSize::Xs)
                 text {{voice}}
             }
@@ -67,9 +67,9 @@ fn bookmark_item(state: AppState, bookmark: Bookmark) -> AnyView {
     let label = bookmark.label.clone();
     view! {
         MenuItem(on_select = act(move || state.connect_bookmark(&bookmark))) {
-            row(class = "ms-menu-row") {
+            row(class = "zs-menu-row") {
                 StatusDot(tone = Signal::stored_local(if here { "ok" } else { "idle" }))
-                text(class = "ms-menu-row__text") {{label.clone()}}
+                text(class = "zs-menu-row__text") {{label.clone()}}
             }
         }
     }
@@ -98,10 +98,10 @@ pub fn ServerMenu() -> impl IntoView {
 
     view! {
         DropdownMenu {
-            DropdownMenuTrigger(variant = ButtonVariant::Ghost, size = ButtonSize::Sm, class = "ms-server", on:pointer_down = press::hold()) {
+            DropdownMenuTrigger(variant = ButtonVariant::Ghost, size = ButtonSize::Sm, class = "zs-server", on:pointer_down = press::hold()) {
                 StatusDot(tone = tone, busy = busy)
-                text(class = "ms-server__name") {{move || state.server_label()}}
-                Icon(svg = icons::CHEVRON_DOWN, size = IconSize::Xs, class = "ms-server__chevron")
+                text(class = "zs-server__name") {{move || state.server_label()}}
+                Icon(svg = icons::CHEVRON_DOWN, size = IconSize::Xs, class = "zs-server__chevron")
             }
             DropdownMenuContent {
                 {facts(state)}

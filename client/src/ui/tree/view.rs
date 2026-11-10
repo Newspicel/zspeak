@@ -13,7 +13,7 @@ use crate::ui::state::{AppState, Row, RowKey, tree_rows};
 use crate::ui::tree::channel_row::ChannelLineProps;
 use crate::ui::tree::client_row::ClientLineProps;
 
-/// How tall one row is, in CSS pixels. `--ms-row` holds the same length.
+/// How tall one row is, in CSS pixels. `--zs-row` holds the same length.
 pub const ROW: f32 = 28.0;
 
 /// How far one level of the tree steps in, in CSS pixels.
@@ -55,10 +55,10 @@ pub fn Tree() -> impl IntoView {
     let height = move || Some(format!("{}px", keys.with(Vec::len) as f32 * ROW));
 
     view! {
-        ScrollArea(class = "ms-tree", label = "Channels") {
-            column(class = "ms-tree__rows") {
+        ScrollArea(class = "zs-tree", label = "Channels") {
+            column(class = "zs-tree__rows") {
                 box(
-                    class = "ms-tree__field",
+                    class = "zs-tree__field",
                     style:height = height,
                     a11y:role = Role::Tree,
                     a11y:label = "Channels"
@@ -76,7 +76,7 @@ pub fn Tree() -> impl IntoView {
 fn slot(keys: Memo<Vec<RowKey>>, rows: Memo<Vec<Row>>, key: RowKey) -> AnyView {
     let place = move || keys.with(|keys| keys.iter().position(|k| *k == key).unwrap_or(0));
     view! {
-        box(class = "ms-slot", style:top = move || offset(place())) {
+        box(class = "zs-slot", style:top = move || offset(place())) {
             {line(rows, key)}
         }
     }

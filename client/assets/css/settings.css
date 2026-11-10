@@ -1,14 +1,14 @@
 /* The settings page: the sections down a sidebar-tone column and their controls beside it. */
 
-.ms-settings {
+.zs-settings {
     flex: 1 1 0;
     min-width: 0;
     min-height: 0;
     height: 100%;
-    --ms-settings-control: 220px;
+    --zs-settings-control: 220px;
 }
 
-.ms-settings .zui-settings__pages {
+.zs-settings .zui-settings__pages {
     width: 220px;
     height: 100%;
     padding: 0 var(--zui-space-sm) var(--zui-space-md);
@@ -17,21 +17,21 @@
 }
 
 /* The head of the column: the way back and the page's name. It moves the window. */
-.ms-settings__head {
+.zs-settings__head {
     flex: 0 0 auto;
     align-items: center;
     gap: var(--zui-space-xs);
-    height: var(--ms-bar);
+    height: var(--zs-bar);
     margin-bottom: var(--zui-space-sm);
     color: var(--zui-color-foreground);
     font-weight: var(--zui-type-weight-medium);
 }
 
-.ms-frame[data-frame="system"] .ms-settings__head {
-    padding-left: calc(var(--ms-lead) - var(--zui-space-sm));
+.zs-frame[data-frame="system"] .zs-settings__head {
+    padding-left: calc(var(--zs-lead) - var(--zui-space-sm));
 }
 
-.ms-settings .zui-settings__page {
+.zs-settings .zui-settings__page {
     gap: var(--zui-space-sm);
     height: 28px;
     padding: 0 var(--zui-space-sm);
@@ -41,17 +41,17 @@
     color: var(--zui-color-sidebar-foreground);
 }
 
-.ms-settings .zui-settings__page:hover {
+.zs-settings .zui-settings__page:hover {
     background-color: color-mix(in oklab, var(--zui-color-sidebar-accent) 80%, transparent);
 }
 
-.ms-settings .zui-settings__page[data-state="active"] {
+.zs-settings .zui-settings__page[data-state="active"] {
     background-color: var(--zui-color-sidebar-accent);
     color: var(--zui-color-sidebar-accent-foreground);
     font-weight: var(--zui-type-weight-medium);
 }
 
-.ms-settings__main {
+.zs-settings__main {
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
@@ -61,49 +61,49 @@
 }
 
 /* The strip over the panes: room for the window keys, and a press that moves the window. */
-.ms-settings__bar {
+.zs-settings__bar {
     flex: 0 0 auto;
-    height: var(--ms-bar);
+    height: var(--zs-bar);
 }
 
-.ms-settings .zui-settings__pane {
+.zs-settings .zui-settings__pane {
     align-items: center;
     gap: var(--zui-space-xl);
     padding: 0 var(--zui-space-xl) var(--zui-space-xl);
 }
 
-.ms-settings .zui-settings__pane > * {
+.zs-settings .zui-settings__pane > * {
     width: 100%;
     max-width: 640px;
 }
 
-.ms-settings .zui-settings__item {
+.zs-settings .zui-settings__item {
     padding-block: var(--zui-space-sm);
 }
 
-.ms-settings .zui-settings__item-description {
+.zs-settings .zui-settings__item-description {
     font-size: var(--zui-type-size-xs);
     line-height: var(--zui-type-leading-xs);
 }
 
 /* Every select stands in one column, 28px tall, with 13px text. */
-.ms-settings .ms-settings__control {
-    width: var(--ms-settings-control);
+.zs-settings .zs-settings__control {
+    width: var(--zs-settings-control);
     height: 28px;
-    font-size: var(--ms-menu-text);
+    font-size: var(--zs-menu-text);
 }
 
-.ms-settings__slider {
+.zs-settings__slider {
     align-items: center;
     gap: var(--zui-space-md);
-    width: var(--ms-settings-control);
+    width: var(--zs-settings-control);
 }
 
-.ms-settings__slider .zui-slider {
+.zs-settings__slider .zui-slider {
     flex: 1 1 auto;
 }
 
-.ms-settings__value {
+.zs-settings__value {
     flex: 0 0 auto;
     width: 48px;
     text-align: right;
@@ -112,33 +112,33 @@
     font-variant-numeric: tabular-nums;
 }
 
-.ms-settings__note {
+.zs-settings__note {
     color: var(--zui-color-muted-foreground);
     font-size: var(--zui-type-size-xs);
 }
 
-.ms-settings__note[data-tone="err"] {
-    color: var(--ms-tone-err);
+.zs-settings__note[data-tone="err"] {
+    color: var(--zs-tone-err);
 }
 
 /* A switch between a few values: one framed group, ghost keys in it, the chosen one on the
    accent tone. */
-.ms-switch.zui-toggle-group {
+.zs-switch.zui-toggle-group {
     gap: 2px;
     height: 28px;
     padding: 2px;
     border: 1px solid var(--zui-color-border);
-    border-radius: var(--ms-radius);
+    border-radius: var(--zs-radius);
     background-color: transparent;
     box-shadow: none;
 }
 
-.ms-switch.zui-toggle-group > .zui-toggle {
+.zs-switch.zui-toggle-group > .zui-toggle {
     height: 22px;
     min-width: 0;
     padding: 0 8px;
     border: none;
-    border-radius: calc(var(--ms-radius) - 2px);
+    border-radius: calc(var(--zs-radius) - 2px);
     background-color: transparent;
     box-shadow: none;
     color: var(--zui-color-muted-foreground);
@@ -146,18 +146,18 @@
     line-height: var(--zui-type-leading-xs);
 }
 
-.ms-switch.zui-toggle-group > .zui-toggle:hover {
+.zs-switch.zui-toggle-group > .zui-toggle:hover {
     background-color: transparent;
     color: var(--zui-color-foreground);
 }
 
-.ms-switch.zui-toggle-group > .zui-toggle[data-state="on"] {
+.zs-switch.zui-toggle-group > .zui-toggle[data-state="on"] {
     background-color: var(--zui-color-accent);
     color: var(--zui-color-accent-foreground);
 }
 
 /* The level meter: the bar fills with the input level, the mark stands at the threshold. */
-.ms-meter {
+.zs-meter {
     position: relative;
     width: 100%;
     height: 6px;
@@ -166,20 +166,20 @@
     overflow: hidden;
 }
 
-.ms-meter__fill {
+.zs-meter__fill {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     border-radius: 3px;
-    background-color: var(--ms-tone-idle);
+    background-color: var(--zs-tone-idle);
 }
 
-.ms-meter__fill[data-hot="true"] {
-    background-color: var(--ms-talk);
+.zs-meter__fill[data-hot="true"] {
+    background-color: var(--zs-talk);
 }
 
-.ms-meter__mark {
+.zs-meter__mark {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -187,11 +187,11 @@
     background-color: var(--zui-color-foreground);
 }
 
-.ms-vad {
+.zs-vad {
     gap: var(--zui-space-sm);
 }
 
-.ms-vad__readout {
+.zs-vad__readout {
     align-items: center;
     justify-content: space-between;
     color: var(--zui-color-muted-foreground);
@@ -199,19 +199,19 @@
     font-variant-numeric: tabular-nums;
 }
 
-.ms-vad__speech[data-on="true"] {
-    color: var(--ms-talk);
+.zs-vad__speech[data-on="true"] {
+    color: var(--zs-talk);
 }
 
 /* The theme picker: every theme as the colours it wears. */
-.ms-themes {
+.zs-themes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--zui-space-sm);
 }
 
-.ms-theme {
+.zs-theme {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -222,27 +222,27 @@
     cursor: pointer;
 }
 
-.ms-theme:hover {
+.zs-theme:hover {
     background-color: var(--zui-color-accent);
 }
 
-.ms-theme[data-chosen="true"] {
+.zs-theme[data-chosen="true"] {
     background-color: var(--zui-color-accent);
     color: var(--zui-color-accent-foreground);
 }
 
-.ms-theme:focus-visible {
+.zs-theme:focus-visible {
     outline: 1px solid var(--zui-color-ring);
     outline-offset: 1px;
 }
 
-.ms-theme__surfaces {
+.zs-theme__surfaces {
     display: flex;
     flex-direction: row;
     gap: 2px;
 }
 
-.ms-theme__surface {
+.zs-theme__surface {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -255,14 +255,14 @@
     overflow: hidden;
 }
 
-.ms-theme__plane {
+.zs-theme__plane {
     flex: 0 0 auto;
     width: 6px;
     height: 18px;
     border-radius: 1px;
 }
 
-.ms-theme__marks {
+.zs-theme__marks {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -270,20 +270,20 @@
     min-width: 0;
 }
 
-.ms-theme__dot {
+.zs-theme__dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
 }
 
-.ms-theme__line {
+.zs-theme__line {
     width: 100%;
     height: 2px;
     border-radius: 1px;
     opacity: 0.7;
 }
 
-.ms-theme__name {
+.zs-theme__name {
     width: 74px;
     text-align: center;
     font-size: var(--zui-type-size-xs);
@@ -292,7 +292,7 @@
     text-overflow: ellipsis;
 }
 
-.ms-about {
+.zs-about {
     gap: var(--zui-space-sm);
     color: var(--zui-color-muted-foreground);
     font-size: var(--zui-type-size-sm);
@@ -300,21 +300,21 @@
 }
 
 /* The back key points the way it leads. */
-.ms-settings__back .ms-icon {
+.zs-settings__back .zs-icon {
     rotate: 180deg;
 }
 
 /* The threshold meter takes the width of the control column. */
-.ms-settings .ms-vad {
-    width: var(--ms-settings-control);
+.zs-settings .zs-vad {
+    width: var(--zs-settings-control);
 }
 
-.ms-settings .ms-vad .ms-settings__slider {
+.zs-settings .zs-vad .zs-settings__slider {
     width: 100%;
 }
 
 /* A long device name shortens inside the select, so the chevron stays in its frame. */
-.ms-settings .ms-settings__control .ms-settings__value-text {
+.zs-settings .zs-settings__control .zs-settings__value-text {
     flex: 1 1 0;
     min-width: 0;
     overflow: hidden;
@@ -323,31 +323,31 @@
 }
 
 /* The identity: its id and its level read as values, in the control column. */
-.ms-identity__uid,
-.ms-identity__level {
-    width: var(--ms-settings-control);
+.zs-identity__uid,
+.zs-identity__level {
+    width: var(--zs-settings-control);
     font-family: var(--zui-type-family-mono);
     font-size: var(--zui-type-size-xs);
     color: var(--zui-color-muted-foreground);
 }
 
 /* Controls that stand together in one row of a settings item. */
-.ms-identity__row {
+.zs-identity__row {
     align-items: center;
     gap: var(--zui-space-xs);
 }
 
-.ms-identity__target {
+.zs-identity__target {
     width: 72px;
 }
 
 /* A pasted identity is long, so the import column takes the width of the pane. */
-.ms-identity__import {
+.zs-identity__import {
     gap: var(--zui-space-sm);
     padding-top: var(--zui-space-sm);
 }
 
-.ms-identity__paste {
+.zs-identity__paste {
     width: 100%;
     min-height: 92px;
     font-family: var(--zui-type-family-mono);
@@ -355,7 +355,7 @@
 }
 
 /* What an identity holds, before it takes the place of the one in use. */
-.ms-identity__preview {
+.zs-identity__preview {
     gap: var(--zui-space-xs);
     padding: var(--zui-space-sm);
     border-radius: var(--zui-radius-md);
@@ -363,13 +363,13 @@
     font-size: var(--zui-type-size-sm);
 }
 
-.ms-identity__hint,
-.ms-identity__progress {
+.zs-identity__hint,
+.zs-identity__progress {
     color: var(--zui-color-muted-foreground);
     font-size: var(--zui-type-size-xs);
 }
 
-.ms-identity__trouble {
+.zs-identity__trouble {
     color: var(--zui-color-destructive);
     font-size: var(--zui-type-size-xs);
 }

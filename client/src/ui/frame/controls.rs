@@ -45,10 +45,10 @@ pub fn WindowControls() -> impl IntoView {
     });
 
     own_frame(view! {
-        row(class = "ms-corner", on:pointer_down = press::move_window()) {
-            {key("Minimise", "ms-corner__key", Signal::stored_local(icons::MINUS), move || min.minimize())}
-            {key("Maximise", "ms-corner__key", shape, move || max.toggle_maximized())}
-            {key("Close", "ms-corner__key ms-corner__key--close", Signal::stored_local(icons::X), move || close.close())}
+        row(class = "zs-corner", on:pointer_down = press::move_window()) {
+            {key("Minimise", "zs-corner__key", Signal::stored_local(icons::MINUS), move || min.minimize())}
+            {key("Maximise", "zs-corner__key", shape, move || max.toggle_maximized())}
+            {key("Close", "zs-corner__key zs-corner__key--close", Signal::stored_local(icons::X), move || close.close())}
         }
     })
 }

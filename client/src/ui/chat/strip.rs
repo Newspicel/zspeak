@@ -23,9 +23,9 @@ pub fn TabStrip(children: Children) -> impl IntoView {
     let after = move || seen.with(|p| !p.is_at_end_horizontally());
 
     view! {
-        box(class = "ms-strip") {
+        box(class = "zs-strip") {
             row(
-                class = "ms-strip__scroll",
+                class = "zs-strip__scroll",
                 node_ref = port,
                 a11y:role = Role::TabList,
                 a11y:label = "Conversations",
@@ -45,8 +45,8 @@ pub fn TabStrip(children: Children) -> impl IntoView {
             ) {
                 {children.into_view_once()}
             }
-            box(class = "ms-strip__fade", attr:data-edge = "start", attr:data-shown = move || before().then(|| "true".to_owned()), a11y:hidden = true)
-            box(class = "ms-strip__fade", attr:data-edge = "end", attr:data-shown = move || after().then(|| "true".to_owned()), a11y:hidden = true)
+            box(class = "zs-strip__fade", attr:data-edge = "start", attr:data-shown = move || before().then(|| "true".to_owned()), a11y:hidden = true)
+            box(class = "zs-strip__fade", attr:data-edge = "end", attr:data-shown = move || after().then(|| "true".to_owned()), a11y:hidden = true)
         }
     }
 }

@@ -3,7 +3,7 @@
 //! same events every other transport reports.
 //!
 //! Support is experimental and covers talking, moving, messages and pokes. A TeamSpeak server
-//! grants server groups in place of moqspeak's roles, and carries no screens.
+//! grants server groups in place of zspeak's roles, and carries no screens.
 
 mod commands;
 pub mod identity;
