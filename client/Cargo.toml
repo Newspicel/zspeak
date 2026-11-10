@@ -11,10 +11,10 @@ repository = "https://github.com/Newspicel/zspeak"
 screen-share = ["dep:xcap", "dep:rav1e", "dep:rav1d", "dep:screencapturekit"]
 
 [dependencies]
-zgui = { git = "https://github.com/zortax/zgui", rev = "f6badfb1af02b08ed1924687237028fb98a97bd8" }
-zgui-ui = { git = "https://github.com/zortax/zgui", rev = "f6badfb1af02b08ed1924687237028fb98a97bd8" }
-zgui-ui-tokens = { git = "https://github.com/zortax/zgui", rev = "f6badfb1af02b08ed1924687237028fb98a97bd8" }
-zgui-ui-icons = { git = "https://github.com/zortax/zgui", rev = "f6badfb1af02b08ed1924687237028fb98a97bd8" }
+zgui = { git = "https://github.com/zortax/zgui", rev = "80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a" }
+zgui-ui = { git = "https://github.com/zortax/zgui", rev = "80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a" }
+zgui-ui-tokens = { git = "https://github.com/zortax/zgui", rev = "80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a" }
+zgui-ui-icons = { git = "https://github.com/zortax/zgui", rev = "80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a" }
 cpal = "0.18"
 opus = "0.4"
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "net"] }
@@ -41,7 +41,7 @@ ed25519-dalek = "2"
 base64 = "0.22"
 getrandom = "0.3"
 image = { version = "0.25", default-features = false, features = ["png"] }
-zgui-ui-primitives = { git = "https://github.com/zortax/zgui", rev = "f6badfb1af02b08ed1924687237028fb98a97bd8", version = "0.1.0" }
+zgui-ui-primitives = { git = "https://github.com/zortax/zgui", rev = "80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a", version = "0.1.0" }
 ts3proto = { version = "0.1.0", path = "../ts3proto" }
 sha1 = "0.11"
 p256 = "0.13"

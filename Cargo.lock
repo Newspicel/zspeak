@@ -988,9 +988,9 @@ dependencies = [
 
 [[package]]
 name = "cephal"
-version = "0.1.1"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b74eac90bccfd105751a15dcf6e16206b3ba0c837575dd7c4f9993c35e4b014"
+checksum = "7e5a13dfbd5a30b3a70dd76465339854bc8fe5ec22b5bb8548e1ec564b9412bd"
 
 [[package]]
 name = "cexpr"
@@ -3853,48 +3853,6 @@ dependencies = [
  "web-transport-trait",
  "webpki-roots",
  "x509-parser",
-]
-
-[[package]]
-name = "zspeak"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "base64 0.22.1",
- "bytes",
- "chrono",
- "cpal",
- "directories",
- "earshot",
- "ed25519-dalek",
- "futures-util",
- "getrandom 0.3.4",
- "image",
- "moq-net",
- "moq-tokio",
- "nnnoiseless",
- "opus",
- "p256",
- "rav1d",
- "rav1e",
- "screencapturekit",
- "serde",
- "serde_json",
- "sha1 0.11.0",
- "sonora",
- "tokio",
- "tokio-tungstenite 0.30.0",
- "tracing",
- "tracing-subscriber",
- "ts3proto",
- "url",
- "winresource",
- "xcap",
- "zgui",
- "zgui-ui",
- "zgui-ui-icons",
- "zgui-ui-primitives",
- "zgui-ui-tokens",
 ]
 
 [[package]]
@@ -9047,7 +9005,7 @@ dependencies = [
 [[package]]
 name = "zgui"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui-atlas",
  "zgui-bits",
@@ -9077,7 +9035,7 @@ dependencies = [
 [[package]]
 name = "zgui-a11y"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "accesskit",
  "zgui-bits",
@@ -9093,7 +9051,7 @@ dependencies = [
 [[package]]
 name = "zgui-anim"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui-bits",
  "zgui-dom",
@@ -9106,12 +9064,12 @@ dependencies = [
 [[package]]
 name = "zgui-arena"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 
 [[package]]
 name = "zgui-atlas"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "etagere",
  "rustc-hash 2.1.3",
@@ -9123,7 +9081,7 @@ dependencies = [
 [[package]]
 name = "zgui-bits"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "bitflags 2.13.2",
  "zgui-geom",
@@ -9132,7 +9090,7 @@ dependencies = [
 [[package]]
 name = "zgui-canvas"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "kurbo",
  "peniko",
@@ -9145,12 +9103,12 @@ dependencies = [
 [[package]]
 name = "zgui-color"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 
 [[package]]
 name = "zgui-css"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "app_units",
  "cssparser",
@@ -9167,7 +9125,7 @@ dependencies = [
 [[package]]
 name = "zgui-custom"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "zgui-elements",
@@ -9182,7 +9140,7 @@ dependencies = [
 [[package]]
 name = "zgui-dom"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "app_units",
  "bitflags 2.13.2",
@@ -9207,7 +9165,7 @@ dependencies = [
 [[package]]
 name = "zgui-edit"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui-dom",
  "zgui-geom",
@@ -9218,7 +9176,7 @@ dependencies = [
 [[package]]
 name = "zgui-elements"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "kurbo",
  "zgui-canvas",
@@ -9232,7 +9190,7 @@ dependencies = [
 [[package]]
 name = "zgui-geom"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "bytemuck",
 ]
@@ -9240,7 +9198,7 @@ dependencies = [
 [[package]]
 name = "zgui-image"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "image",
  "thiserror 2.0.21",
@@ -9250,7 +9208,7 @@ dependencies = [
 [[package]]
 name = "zgui-input"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "smallvec",
@@ -9267,7 +9225,7 @@ dependencies = [
 [[package]]
 name = "zgui-interned"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
 ]
@@ -9275,7 +9233,7 @@ dependencies = [
 [[package]]
 name = "zgui-layout"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "cephal",
  "rayon",
@@ -9297,7 +9255,7 @@ dependencies = [
 [[package]]
 name = "zgui-paint"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "smallvec",
@@ -9324,7 +9282,7 @@ dependencies = [
 [[package]]
 name = "zgui-platform"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "accesskit",
  "raw-window-handle",
@@ -9336,7 +9294,7 @@ dependencies = [
 [[package]]
 name = "zgui-platform-wayland"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "accesskit",
  "accesskit_unix",
@@ -9359,7 +9317,7 @@ dependencies = [
 [[package]]
 name = "zgui-platform-winit"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -9382,7 +9340,7 @@ dependencies = [
 [[package]]
 name = "zgui-profile"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "tracing",
 ]
@@ -9390,13 +9348,14 @@ dependencies = [
 [[package]]
 name = "zgui-reactive"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "any_spawner",
  "futures",
  "reactive_graph",
  "reactive_stores",
  "send_wrapper",
+ "smallvec",
  "thiserror 2.0.21",
  "tracing",
 ]
@@ -9404,7 +9363,7 @@ dependencies = [
 [[package]]
 name = "zgui-render"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "thiserror 2.0.21",
  "zgui-atlas",
@@ -9416,7 +9375,7 @@ dependencies = [
 [[package]]
 name = "zgui-render-vector-coverage"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "bytemuck",
  "kurbo",
@@ -9434,7 +9393,7 @@ dependencies = [
 [[package]]
 name = "zgui-render-vector-vello"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "kurbo",
  "peniko",
@@ -9454,7 +9413,7 @@ dependencies = [
 [[package]]
 name = "zgui-render-wgpu"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "bincode",
  "bytemuck",
@@ -9476,7 +9435,7 @@ dependencies = [
 [[package]]
 name = "zgui-runtime"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "thiserror 2.0.21",
@@ -9512,7 +9471,7 @@ dependencies = [
 [[package]]
 name = "zgui-scene"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "bytemuck",
  "kurbo",
@@ -9530,7 +9489,7 @@ dependencies = [
 [[package]]
 name = "zgui-scroll"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "smallvec",
@@ -9544,7 +9503,7 @@ dependencies = [
 [[package]]
 name = "zgui-shader"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui-geom",
  "zgui-paint",
@@ -9558,7 +9517,7 @@ dependencies = [
 [[package]]
 name = "zgui-shader-macro"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "bincode",
  "naga",
@@ -9571,7 +9530,7 @@ dependencies = [
 [[package]]
 name = "zgui-style"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "app_units",
  "bitflags 2.13.2",
@@ -9599,7 +9558,7 @@ dependencies = [
 [[package]]
 name = "zgui-svg"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "kurbo",
  "peniko",
@@ -9612,7 +9571,7 @@ dependencies = [
 [[package]]
 name = "zgui-text"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "accesskit",
  "kurbo",
@@ -9629,7 +9588,7 @@ dependencies = [
 [[package]]
 name = "zgui-text-parley"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "fontique",
  "kurbo",
@@ -9650,7 +9609,7 @@ dependencies = [
 [[package]]
 name = "zgui-text-style"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "smallvec",
@@ -9664,7 +9623,7 @@ dependencies = [
 [[package]]
 name = "zgui-ui"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui",
  "zgui-ui-icons",
@@ -9675,7 +9634,7 @@ dependencies = [
 [[package]]
 name = "zgui-ui-icons"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui",
 ]
@@ -9683,7 +9642,7 @@ dependencies = [
 [[package]]
 name = "zgui-ui-primitives"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui",
 ]
@@ -9691,7 +9650,7 @@ dependencies = [
 [[package]]
 name = "zgui-ui-tokens"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui",
 ]
@@ -9699,7 +9658,7 @@ dependencies = [
 [[package]]
 name = "zgui-view"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui-geom",
  "zgui-interned",
@@ -9710,7 +9669,7 @@ dependencies = [
 [[package]]
 name = "zgui-view-dom"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "tracing",
@@ -9723,7 +9682,7 @@ dependencies = [
 [[package]]
 name = "zgui-view-macro"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -9733,7 +9692,7 @@ dependencies = [
 [[package]]
 name = "zgui-vocab"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "accesskit",
  "zgui-geom",
@@ -9743,7 +9702,7 @@ dependencies = [
 [[package]]
 name = "zgui-wgpu"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "rustc-hash 2.1.3",
  "tracing",
@@ -9764,7 +9723,7 @@ dependencies = [
 [[package]]
 name = "zgui-wgsl"
 version = "0.1.0"
-source = "git+https://github.com/zortax/zgui?rev=f6badfb1af02b08ed1924687237028fb98a97bd8#f6badfb1af02b08ed1924687237028fb98a97bd8"
+source = "git+https://github.com/zortax/zgui?rev=80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a#80baa3c7cb0fbbe1c058f10059e076e41c0a1b9a"
 dependencies = [
  "zgui-scene",
 ]
@@ -9780,6 +9739,48 @@ name = "zmij"
 version = "1.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b"
+
+[[package]]
+name = "zspeak"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "base64 0.22.1",
+ "bytes",
+ "chrono",
+ "cpal",
+ "directories",
+ "earshot",
+ "ed25519-dalek",
+ "futures-util",
+ "getrandom 0.3.4",
+ "image",
+ "moq-net",
+ "moq-tokio",
+ "nnnoiseless",
+ "opus",
+ "p256",
+ "rav1d",
+ "rav1e",
+ "screencapturekit",
+ "serde",
+ "serde_json",
+ "sha1 0.11.0",
+ "sonora",
+ "tokio",
+ "tokio-tungstenite 0.30.0",
+ "tracing",
+ "tracing-subscriber",
+ "ts3proto",
+ "url",
+ "winresource",
+ "xcap",
+ "zgui",
+ "zgui-ui",
+ "zgui-ui-icons",
+ "zgui-ui-primitives",
+ "zgui-ui-tokens",
+]
 
 [[package]]
 name = "zune-core"
